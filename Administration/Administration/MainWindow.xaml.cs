@@ -24,5 +24,24 @@ namespace Administration
         {
             InitializeComponent();
         }
+
+        private void pet_administration_Click(object sender, RoutedEventArgs e)
+        {
+            pet_administration newWindow = new pet_administration();
+            contents.Content = newWindow.pet_administration_grid;
+            contents.DataContext = newWindow;
+        }
+
+        private void user_administration_Click(object sender, RoutedEventArgs e)
+        {
+            user_administration newWindow = new user_administration();
+            contents.Content = newWindow.user_administration_grid;
+            contents.DataContext = newWindow;
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
     }
 }

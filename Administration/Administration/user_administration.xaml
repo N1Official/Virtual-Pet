@@ -6,9 +6,40 @@
         xmlns:local="clr-namespace:Administration"
         mc:Ignorable="d"
         Title="user_administration" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/bg.jpg"/>
+    </Window.Background>
     <ContentControl x:Name="contents" Height="auto">
         <Grid x:Name="user_administration_grid">
-            <Button x:Name="back" Content="BACK" HorizontalAlignment="Left" Margin="265,196,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontSize="20" Click="back_Click"/>
+            <Button x:Name="back" Content="BACK" HorizontalAlignment="Left" Margin="679,368,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontSize="20" Click="back_Click"/>
+            <Grid x:Name="azon" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="104" Margin="59,26,0,0">
+                <Label x:Name="azonlb" Content="Azonosító:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="azontb" HorizontalAlignment="Left" Margin="71,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="33" FontFamily="Arial" IsEnabled="False"/>
+            </Grid>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="69,101,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="121,109,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="usernamelb" Content="Felhasználónév:" HorizontalAlignment="Left" Margin="69,69,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="121,77,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="69,124,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="121,132,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="69,158,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="121,166,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="265,61,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="317,69,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="265,101,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="317,109,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="265,133,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="317,141,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="265,177,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="317,185,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="265,31,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="317,39,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="464,36,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="516,44,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="464,74,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="516,82,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="464,116,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="516,124,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
         </Grid>
     </ContentControl>

@@ -26,7 +26,9 @@ namespace Administration
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainWindow mw = new MainWindow();
+            contents.Content = mw.mainwindow_grid;
+            contents.DataContext = mw;
         }
     }
 }

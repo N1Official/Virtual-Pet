@@ -32,6 +32,7 @@ namespace Administration
             "Bored",
         };
         //These are temporarly while the backend is on developing
+        private int id;
         private string name;
         private string type;
         private int hunger;
@@ -42,7 +43,7 @@ namespace Administration
         private int skill;
         private int age;
         private string age_group;
-
+        public string Id { get => name; set => name = value; }
         public string Name { get => name; set => name = value; }
         public int Hunger 
         { 

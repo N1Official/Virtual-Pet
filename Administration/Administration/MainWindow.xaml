@@ -11,7 +11,7 @@
     </Window.Background>
     <ContentControl x:Name="contents" Height="auto">
         <Grid x:Name="mainwindow_grid">
-            <Label x:Name="title" Content="    VIRTUAL-PET&#xA;ADMINISTRATION" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48" FontFamily="Cascadia Code" VerticalAlignment="Center" Margin="15,-200,0,0"/>
+            <Label x:Name="title" Content=" VIRTUAL-PET&#xA;ADMINISTRATION" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48" FontFamily="Cascadia Code" VerticalAlignment="Center" Margin="15,-200,0,0"/>
             <Button x:Name="user_administration" Content="USERS" HorizontalAlignment="Center" VerticalAlignment="Center" Height="54" Width="104" FontFamily="Cascadia Code" FontSize="24" Click="user_administration_Click" Margin="-180,95,0,0"/>
             <Button x:Name="pet_administration" Content="PETS" HorizontalAlignment="Center" VerticalAlignment="Center" Height="54" Width="104" FontFamily="Cascadia Code" FontSize="24" Background="#FFDDDDDD" BorderThickness="1,1,1,1" Click="pet_administration_Click" Margin="220,95,0,0"/>
             <Label x:Name="info_label" Content="(PLEASE SELECT WHICH CONTENT YOU WANT TO ADMINISTRATE)" HorizontalAlignment="Center" Margin="14,-80,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code"/>

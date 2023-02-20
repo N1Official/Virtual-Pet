@@ -11,13 +11,13 @@ namespace Administration
     internal class User
     {
         private string id;
-        private string name;
+        private string username;
         private string email;
         private string password;
         private string firstName;
         private string lastName;
         private string gender;
-        private string birthday;
+        private DateTime birthday;
         private string phone;
         private string address;
         private string city;
@@ -26,7 +26,7 @@ namespace Administration
         private string country;
 
         public string Id { get => id;}
-        public string Name { get => name; set => name = value; }
+        public string Username { get => username; set => username = value; }
         public string Email
         { 
             get => email;
@@ -109,7 +109,7 @@ namespace Administration
                 }
             }
         }
-        public string Birthday { get => birthday; set => birthday = value; }
+        public DateTime Birthday { get => birthday; set => birthday = value; }
         public string Phone 
         { 
             get => phone;

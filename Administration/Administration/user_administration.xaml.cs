@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Controls;
+using Xceed.Wpf.Toolkit;
 
 namespace Administration
 {
@@ -26,9 +28,12 @@ namespace Administration
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
-            contents.Content = mw.mainwindow_grid;
-            contents.DataContext = mw;
+            Close();
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

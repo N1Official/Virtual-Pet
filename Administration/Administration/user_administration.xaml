@@ -3,44 +3,73 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Administration"
+        xmlns:local="clr-namespace:Administration" 
+        xmlns:wpfx="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit.NET5"
         mc:Ignorable="d"
-        Title="user_administration" Height="450" Width="800">
+        Title="Virtual-Pet - User administration" Height="450" Width="800">
     <Window.Background>
         <ImageBrush ImageSource="/bg.jpg"/>
     </Window.Background>
     <ContentControl x:Name="contents" Height="auto">
         <Grid x:Name="user_administration_grid">
-            <Button x:Name="back" Content="BACK" HorizontalAlignment="Left" Margin="679,368,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontSize="20" Click="back_Click"/>
-            <Grid x:Name="azon" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="104" Margin="59,26,0,0">
-                <Label x:Name="azonlb" Content="Azonosító:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox x:Name="azontb" HorizontalAlignment="Left" Margin="71,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="33" FontFamily="Arial" IsEnabled="False"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="4" x:Name="back" Content="VISSZA" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code" FontSize="20" Click="back_Click" Grid.Column="1"/>
+            <Button Grid.Row="4" x:Name="save" Content="MENTÉS" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code" FontSize="20" Click="save_Click" Grid.Column="2"/>
+            <Grid Grid.Row="0" x:Name="azon" HorizontalAlignment="Center" Height="26" VerticalAlignment="Center" Width="104" Grid.ColumnSpan="4">
+                <Label x:Name="azonlb" Content="Azonosító:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code" Margin="-9,0,0,0"/>
+                <TextBox x:Name="azontb" HorizontalAlignment="Left" Margin="71,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="33" FontFamily="Cascadia Code" IsEnabled="False"/>
             </Grid>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="69,101,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="121,109,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label x:Name="usernamelb" Content="Felhasználónév:" HorizontalAlignment="Left" Margin="69,69,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="121,77,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="69,124,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="121,132,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="69,158,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="121,166,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="265,61,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="317,69,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="265,101,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="317,109,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="265,133,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="317,141,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="265,177,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="317,185,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="265,31,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="317,39,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="464,36,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="516,44,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="464,74,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="516,82,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="464,116,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="516,124,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-
+            <Label x:Name="emaillbl" Content="E-mail cím:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code" Margin="0,10,0,0" Grid.Column="2" Grid.Row="1"/>
+            <TextBox x:Name="emailtb" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" Grid.Column="2" Grid.Row="1"/>
+            <Label x:Name="usernamelb" Content="Felhasználónév:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code" Grid.Row="1" Margin="0,10,0,0"/>
+            <TextBox x:Name="usernametb" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" Grid.Row="1"/>
+            <Label Content="Keresztnév:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code" Grid.Column="1" Grid.Row="2" Margin="0,10,0,0"/>
+            <TextBox x:Name="firstnametb" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" Grid.Column="1" Grid.Row="2"/>
+            <Label Content="Születési dátum:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code" Margin="0,10,0,0" Grid.Column="2" Grid.Row="2"/>
+            <DatePicker x:Name="birthdaydp" HorizontalAlignment="Center" Width="140" FontFamily="Cascadia Code" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2"/>
+            <Label Content="Cím:" HorizontalAlignment="Center" FontFamily="Cascadia Code" VerticalAlignment="Top" Grid.Column="3" Margin="0,10,0,0" Grid.Row="3"/>
+            <TextBox x:Name="addresstb" HorizontalAlignment="Center" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code" VerticalAlignment="Center" Grid.Column="3" Grid.Row="3"/>
+            <Label Content="Város:" HorizontalAlignment="Center" FontFamily="Cascadia Code" VerticalAlignment="Top" Grid.Column="2" Margin="0,10,0,0" Grid.Row="3"/>
+            <TextBox x:Name="citytb" HorizontalAlignment="Center" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3"/>
+            <Label Content="Vezetéknév:" HorizontalAlignment="Center" FontFamily="Cascadia Code" VerticalAlignment="Top" Margin="0,10,0,0" Grid.Row="2"/>
+            <TextBox x:Name="lastnametb" HorizontalAlignment="Center" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+            <Grid Grid.Row="3" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="172" Margin="0,20,0,0" Grid.Column="1">
+                <Label Content="Megye:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
+                <TextBox x:Name="statetb" HorizontalAlignment="Left" Margin="52,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code"/>
+            </Grid>
+            <Grid Grid.Row="3" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="172" Margin="0,14,0,0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="19*"/>
+                    <ColumnDefinition Width="22*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Irányítószám:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="zipcodetb" HorizontalAlignment="Left" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="64" FontFamily="Cascadia Code" Grid.Column="1"/>
+            </Grid>
+            <Label Content="Ország:" HorizontalAlignment="Center" FontFamily="Cascadia Code" VerticalAlignment="Top" Margin="0,10,0,0" Grid.Column="0" Grid.Row="3"/>
+            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code" VerticalAlignment="Center" Grid.Row="3"/>
+            <Label x:Name="passwordlbl" Content="Jelszó:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code" Grid.Column="1" Grid.Row="1" Margin="0,10,0,0"/>
+            <PasswordBox x:Name="pwtb"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" Margin="0,0,0,0" Grid.Column="1" Grid.Row="1"/>
+            <Label Content="Nem:" HorizontalAlignment="Center" FontFamily="Cascadia Code" VerticalAlignment="Top" Grid.Column="3" Grid.Row="2" Margin="0,10,0,0"/>
+            <ComboBox x:Name="gendercb" FontSize="10" FontFamily="Cascadia Code" VerticalAlignment="Center" Width="80" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center">
+                <ComboBoxItem Content="Férfi"/>
+                <ComboBoxItem Content="Nő"/>
+            </ComboBox>
+            <TextBox x:Name="phonetb" HorizontalAlignment="Center" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code" VerticalAlignment="Center" Grid.Column="3" Grid.Row="1"/>
+            <Label Content="     Telefonszám&#xA;(országos hívószámmal):" HorizontalAlignment="Center" FontFamily="Cascadia Code" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Grid.Column="3" Grid.Row="1"/>
+            <ComboBox x:Name="comboBox" Grid.Column="2" HorizontalAlignment="Center" Margin="0,55,0,0" VerticalAlignment="Top" Width="120">
+            </ComboBox>
         </Grid>
     </ContentControl>
 </Window>

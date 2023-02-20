@@ -32,20 +32,20 @@ namespace Administration
             "Bored",
         };
         //These are temporarly while the backend is on developing
-        private int id;
+        private double id;
         private string name;
         private string type;
-        private int hunger;
-        private int thirst;
+        private double hunger;
+        private double thirst;
         private string mood;
-        private int speed;
-        private int health;
-        private int skill;
-        private int age;
+        private double speed;
+        private double health;
+        private double skill;
+        private double age;
         private string age_group;
         public string Id { get => name; set => name = value; }
         public string Name { get => name; set => name = value; }
-        public int Hunger 
+        public double Hunger 
         { 
             get => hunger;
             set 
@@ -54,13 +54,19 @@ namespace Administration
                 {
                     MessageBox.Show("Negatív nem lehet az éhségszint!");
                 }
+                else if (value>10)
+                {
+                    value = 10;
+                    hunger = value;
+                    MessageBox.Show("Maximális éhségszint!");
+                }
                 else
                 {
                     hunger = value;
                 }
             } 
         }
-        public int Thirst 
+        public double Thirst 
         {
             get => thirst;
             set
@@ -68,6 +74,12 @@ namespace Administration
                 if (value < 0)
                 {
                     MessageBox.Show("Negatív nem lehet a szomjúság!");
+                }
+                else if (value > 10)
+                {
+                    value = 10;
+                    hunger = value;
+                    MessageBox.Show("Maximális szomjúság!");
                 }
                 else
                 {
@@ -90,7 +102,7 @@ namespace Administration
                 }
             }
         }
-        public int Speed
+        public double Speed
         {
             get => speed;
             set
@@ -99,20 +111,32 @@ namespace Administration
                 {
                     MessageBox.Show("Nulla, illetve annál kisebb nem lehet a gyorsaság!");
                 }
+                else if (value > 100)
+                {
+                    value = 100;
+                    hunger = value;
+                    MessageBox.Show("Maximális gyorsaság!");
+                }
                 else
                 {
                     speed = value;
                 }
             }
         }
-        public int Health 
+        public double Health 
         {
             get => health;
             set
             {
                 if (value <= 0)
                 {
-                    MessageBox.Show("Nulla, illetve annál kisebb nem lehet az egészség!");
+                    MessageBox.Show("Nulla, illetve annál kisebb nem lehet az életerő!");
+                }
+                else if (value > 100)
+                {
+                    value = 100;
+                    hunger = value;
+                    MessageBox.Show("Maximális életerő!");
                 }
                 else
                 {
@@ -120,14 +144,20 @@ namespace Administration
                 }
             }
         }
-        public int Skill 
+        public double Skill 
         { 
             get => skill;
             set
             {
                 if (value < 0)
                 {
-                    MessageBox.Show("Negatív nem lehet az ügyeszség!");
+                    MessageBox.Show("Negatív nem lehet az ügyesség!");
+                }
+                else if (value > 100)
+                {
+                    value = 100;
+                    hunger = value;
+                    MessageBox.Show("Maximális ügyesség!");
                 }
                 else
                 {
@@ -135,7 +165,7 @@ namespace Administration
                 }
             }
         }
-        public int Age 
+        public double Age 
         {
             get => age;
             set

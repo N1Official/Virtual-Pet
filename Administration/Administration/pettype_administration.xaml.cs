@@ -28,5 +28,13 @@ namespace Administration
         {
             this.Close();
         }
+
+        private void delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Valóban törölni akarja ezt a típust?", "Törlés", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                // selecteduser delete  
+            }
+        }
     }
 }

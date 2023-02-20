@@ -63,5 +63,13 @@ namespace Administration
         {
             new pettype_administration() { WindowStartupLocation = WindowStartupLocation.CenterScreen }.ShowDialog();
         }
+
+        private void delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Valóban törölni akarja ezt a kisállatot?", "Törlés", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                // selecteduser delete  
+            }
+        }
     }
 }

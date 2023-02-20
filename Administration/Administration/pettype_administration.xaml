@@ -25,7 +25,7 @@
             <Label x:Name="newtypelbl" Content="Új típus megnevezése:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code"/>
             <TextBox x:Name="newtypetb" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code"/>
         </Grid>
-        <Button Grid.Row="2" x:Name="delete" Content="TÖRLÉS" HorizontalAlignment="Center" Margin="0,0,70,0" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
+        <Button Grid.Row="2" x:Name="delete" Content="TÖRLÉS" HorizontalAlignment="Center" Margin="0,0,70,0" VerticalAlignment="Center" FontFamily="Cascadia Code" Click="delete_Click"/>
         <Button Grid.Row="2" x:Name="save" Content="MENTÉS" HorizontalAlignment="Center" Margin="70,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
         <Button Grid.Row="3" x:Name="back" Content="VISSZA" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code" Click="back_Click"/>
     </Grid>

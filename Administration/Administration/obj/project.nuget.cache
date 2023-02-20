@@ -1,14 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oWlRbODszCBBNesmg0NtxvHy79E1QCSN4I3d7vnnT9Cc4eforiWylSzdQezGyTSSox7piJXsS22QlzKyxaTD6w==",
+  "dgSpecHash": "9FWjZ0oCrOUBbJbEI/yE7QFrDVsO79eUoM6PfTJVbCjl93VG7NynuctXpg0JoYnOcM9TgXTSdtU5AATCOFbjDw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
+  "projectFilePath": "C:\\Users\\boton\\OneDrive\\Documents\\Git\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\felasznló\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
-    "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.13\\microsoft.netcore.app.host.win-x64.6.0.13.nupkg.sha512",
-    "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
-    "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
-    "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512"
+    "C:\\Users\\boton\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Administration" 
         xmlns:wpfx="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit.NET5"
         mc:Ignorable="d"
-        Title="Virtual-Pet - User administration" Height="450" Width="800">
+        Title="Virtual-Pet - User administration" Height="450" Width="800" MinWidth="800" MinHeight="450">
     <ContentControl x:Name="contents" Height="auto">
         <Grid x:Name="user_administration_grid">
             <Grid.RowDefinitions>
@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Border BorderThickness="1" Grid.ColumnSpan="4" Grid.RowSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="772" Height="310" IsEnabled="False" Background="#B2B9B9B9">
+            <Border BorderThickness="1" Grid.ColumnSpan="4" Grid.RowSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="16" IsEnabled="False" Background="#B2B9B9B9">
                 <Border.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="1"/>

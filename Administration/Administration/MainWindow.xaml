@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Administration"
         mc:Ignorable="d"
-        Title="Virtual-pet administration" Height="443" Width="733">
+        Title="Virtual-pet administration" Height="450" Width="800" MinWidth="800" MinHeight="450">
     <Window.Background>
-        <ImageBrush TileMode="None" ImageSource="/bg.jpg"/>
+        <ImageBrush TileMode="None" ImageSource="/bg.jpg" Stretch="UniformToFill"/>
     </Window.Background>
     <ContentControl x:Name="contents" Height="auto">
         <Grid x:Name="mainwindow_grid">

@@ -117,19 +117,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\felasznló\\.nuget\\packages\\": {}
+    "C:\\Users\\boton\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
+      "projectUniqueName": "C:\\Users\\boton\\OneDrive\\Documents\\Git\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
       "projectName": "Administration",
-      "projectPath": "C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
-      "packagesPath": "C:\\Users\\felasznló\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\obj\\",
+      "projectPath": "C:\\Users\\boton\\OneDrive\\Documents\\Git\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
+      "packagesPath": "C:\\Users\\boton\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\boton\\OneDrive\\Documents\\Git\\Virtual-Pet\\Administration\\Administration\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\felasznló\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\boton\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -171,24 +171,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -197,7 +179,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

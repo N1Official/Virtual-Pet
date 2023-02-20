@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Administration"
         mc:Ignorable="d"
-        Title="petmood_administration" Height="450" Width="800">
-    <Grid>
-        
+        Title="petmood_administration" Height="178" Width="234" MinHeight="178" MinWidth="234">
+    <Grid Background="#B2B9B9B9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Center" Height="24" Margin="0,0,0,0" VerticalAlignment="Center" Width="207">
+            <Label x:Name="moodslbl" Content="HANGULATOK:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
+            <ComboBox x:Name="moodscb" HorizontalAlignment="Left" Margin="87,0,0,0" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" Height="40" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="178">
+            <Label x:Name="newmoodlbl" Content="Új hangulat megnevezése:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code"/>
+            <TextBox x:Name="newmoodtb" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code"/>
+        </Grid>
+        <Button Grid.Row="2" x:Name="delete" Content="TÖRLÉS" HorizontalAlignment="Center" Margin="0,0,70,0" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
+        <Button Grid.Row="2" x:Name="save" Content="MENTÉS" HorizontalAlignment="Center" Margin="70,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
+        <Button Grid.Row="3" x:Name="back" Content="VISSZA" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code" Click="back_Click"/>
     </Grid>
 </Window>

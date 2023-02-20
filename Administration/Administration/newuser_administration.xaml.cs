@@ -31,7 +31,21 @@ namespace Administration
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
-
+            User newUser = new User();
+            newUser.Id = int.Parse(idcb.Text);// check is required!!
+            newUser.Pets_id = pets_idtb.Text;
+            newUser.Email = emailtb.Text;
+            newUser.Password = pwtb.Password;
+            newUser.FirstName = firstnametb.Text;
+            newUser.LastName = lastnametb.Text;
+            newUser.Gender = gendercb.Text;
+            newUser.Birthday = DateTime.Parse(birthdaydp.Text);
+            newUser.Phone = phonetb.Text;
+            newUser.Address = addresstb.Text;
+            newUser.City = addresstb.Text;
+            newUser.State = statetb.Text;
+            newUser.Zipcode = int.Parse(zipcodetb.Text);
+            newUser.Country = countrytb.Text;
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Administration"
         mc:Ignorable="d"
-        Title="pet_administration" Height="450" Width="800">
+        Title="Virtual-Pet - Pet administration" Height="450" Width="800" MinWidth="800" MinHeight="450">
 
     <ContentControl x:Name="contents" Height="auto">
         <Grid x:Name="pet_administration_grid">
@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Border BorderThickness="1" Grid.ColumnSpan="5" Grid.RowSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="772" MinHeight="310" Background="#B2B9B9B9" Margin="0,0,0,80" IsEnabled="False">
+            <Border BorderThickness="1" Grid.ColumnSpan="5" Grid.RowSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="16" Background="#B2B9B9B9" IsEnabled="False">
                 <Border.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="1"/>

@@ -31,7 +31,18 @@ namespace Administration
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
-
+            Pet newPet = new Pet();
+            newPet.Id = int.Parse(idtb.Text); // check is required
+            newPet.Name = nametb.Text;
+            newPet.Type = typecb.Text;
+            newPet.Hunger = hungerslider.Value;
+            newPet.Thirst = thirstslider.Value;
+            newPet.Mood = moodcb.Text;
+            newPet.Speed = speedslider.Value;
+            newPet.Health = healthslider.Value;
+            newPet.Skill = skillslider.Value;
+            newPet.Age = double.Parse(agetb.Text);
+            newPet.Age_group = agegroupcb.Text;
         }
     }
 }

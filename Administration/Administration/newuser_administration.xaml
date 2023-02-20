@@ -5,10 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Administration"
         mc:Ignorable="d"
-        Title="newuser_administration" Height="450" Width="800">
-    <Window.Background>
-        <ImageBrush ImageSource="/bg.jpg"/>
-    </Window.Background>
+        Title="Virtual-Pet - Creating new user" Height="450" Width="800" MinHeight="450" MinWidth="800">
     <ContentControl x:Name="contents" Height="auto">
         <Grid x:Name="user_administration_grid">
             <Grid.RowDefinitions>
@@ -24,12 +21,19 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Border BorderThickness="1" Grid.ColumnSpan="4" Grid.RowSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="772" Height="310" IsEnabled="False" Background="#B2B9B9B9"/>
+            <Border BorderThickness="1" Grid.ColumnSpan="5" Grid.RowSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="16" Background="#B2B9B9B9" IsEnabled="False">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FF747474" Offset="0.457"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
             <Button Grid.Row="4" x:Name="back" Content="VISSZA" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code" FontSize="20" Click="back_Click" Grid.Column="1"/>
             <Button Grid.Row="4" x:Name="save" Content="MENTÉS" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code" FontSize="20" Click="save_Click" Grid.Column="2"/>
             <Grid Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="135">
                 <Label x:Name="azonlb" Content="Azonosító:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
-                <ComboBox x:Name="idcb" HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" Width="50" FontFamily="Cascadia Code"/>
+                <TextBox x:Name="idcb" HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" Width="50" FontFamily="Cascadia Code"/>
             </Grid>
             <Label x:Name="petsazonlb" Content="Kisállat azonosító(k):" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cascadia Code" Grid.Column="3"/>
             <TextBox x:Name="pets_idtb" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" Grid.Row="0" Grid.Column="3" Margin="0,40,0,0"/>
@@ -56,7 +60,7 @@
                 <TextBox x:Name="zipcodetb" HorizontalAlignment="Left" Margin="101,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="64" FontFamily="Cascadia Code"/>
             </Grid>
             <Label Content="Ország:" HorizontalAlignment="Center" FontFamily="Cascadia Code" VerticalAlignment="Top" Margin="0,10,0,0" Grid.Column="0" Grid.Row="3"/>
-            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code" VerticalAlignment="Center" Grid.Row="3"/>
+            <TextBox x:Name="countrytb" HorizontalAlignment="Center" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code" VerticalAlignment="Center" Grid.Row="3"/>
             <Label x:Name="passwordlbl" Content="Jelszó:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code" Grid.Column="1" Grid.Row="1" Margin="0,10,0,0"/>
             <PasswordBox x:Name="pwtb"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" Margin="0,0,0,0" Grid.Column="1" Grid.Row="1"/>
             <Label Content="Nem:" HorizontalAlignment="Center" FontFamily="Cascadia Code" VerticalAlignment="Top" Grid.Column="3" Grid.Row="2" Margin="0,10,0,0"/>

@@ -29,7 +29,7 @@ namespace Administration
         private void pet_administration_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            new pet_administration() { WindowStartupLocation = WindowStartupLocation.CenterScreen }.ShowDialog();
+            new pet_administration(){ WindowStartupLocation = WindowStartupLocation.CenterScreen}.ShowDialog();
             Show();  
         }
 

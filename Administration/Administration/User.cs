@@ -10,7 +10,8 @@ namespace Administration
 {
     internal class User
     {
-        private string id;
+        private int id;
+        private string pets_id;
         private string username;
         private string email;
         private string password;
@@ -25,7 +26,8 @@ namespace Administration
         private int zipcode;
         private string country;
 
-        public string Id { get => id;}
+        public int Id { get => id; set => id = value; }
+        public string Pets_id { get => pets_id; set => pets_id = value; }
         public string Username { get => username; set => username = value; }
         public string Email
         { 
@@ -145,5 +147,6 @@ namespace Administration
             }
         }
         public string Country { get => country; set => country = value; }
+
     }
 }

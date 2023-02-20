@@ -45,5 +45,12 @@ namespace Administration
             changedPet.Age = double.Parse(agetb.Text);
             changedPet.Age_group = agegroupcb.Text;
         }
+
+        private void newpet_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            new newpet_administration() { WindowStartupLocation = WindowStartupLocation.CenterScreen }.ShowDialog();
+            Show();
+        }
     }
 }

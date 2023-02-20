@@ -32,7 +32,8 @@ namespace Administration
             "Bored",
         };
         //These are temporarly while the backend is on developing
-        private double id;
+        private int id;
+        private int user_id;
         private string name;
         private string type;
         private double hunger;
@@ -43,7 +44,8 @@ namespace Administration
         private double skill;
         private double age;
         private string age_group;
-        public string Id { get => name; set => name = value; }
+        public int Id { get => id; set => id = value; }
+        public int User_id { get => user_id; set => user_id = value; }
         public string Name { get => name; set => name = value; }
         public double Hunger 
         { 
@@ -226,5 +228,7 @@ namespace Administration
                 }
             } 
         }
+
+
     }
 }

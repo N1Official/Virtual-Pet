@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Virtual-pet administration" Height="443" Width="733" MinHeight="443" MinWidth="733">
     <Window.Background>
-        <ImageBrush TileMode="None" ImageSource="/bg.jpg"/>
+        <ImageBrush TileMode="None" ImageSource="/bg.jpg" Stretch="UniformToFill"/>
     </Window.Background>
     <ContentControl x:Name="contents" Height="auto">
         <Grid x:Name="mainwindow_grid">

@@ -33,7 +33,7 @@ namespace Administration
         private void save_Click(object sender, RoutedEventArgs e)
         {
             Pet changedPet = new Pet();
-            changedPet.Id = idcb.Text;
+            changedPet.Id = int.Parse(idcb.Text);
             changedPet.Name = nametb.Text;
             changedPet.Type = typecb.Text;
             changedPet.Hunger = hungerslider.Value;
@@ -50,6 +50,20 @@ namespace Administration
         {
             Hide();
             new newpet_administration() { WindowStartupLocation = WindowStartupLocation.CenterScreen }.ShowDialog();
+            Show();
+        }
+
+        private void mood_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            new petmood_administration() { WindowStartupLocation = WindowStartupLocation.CenterScreen }.ShowDialog();
+            Show();
+        }
+
+        private void type_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            new pettype_administration() { WindowStartupLocation = WindowStartupLocation.CenterScreen }.ShowDialog();
             Show();
         }
     }

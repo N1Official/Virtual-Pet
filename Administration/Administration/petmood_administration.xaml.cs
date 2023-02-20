@@ -15,23 +15,13 @@ using System.Windows.Shapes;
 namespace Administration
 {
     /// <summary>
-    /// Interaction logic for newpet_administration.xaml
+    /// Interaction logic for petmood_administration.xaml
     /// </summary>
-    public partial class newpet_administration : Window
+    public partial class petmood_administration : Window
     {
-        public newpet_administration()
+        public petmood_administration()
         {
             InitializeComponent();
-        }
-
-        private void back_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void save_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

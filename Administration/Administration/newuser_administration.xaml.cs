@@ -15,35 +15,23 @@ using System.Windows.Shapes;
 namespace Administration
 {
     /// <summary>
-    /// Interaction logic for user_administration.xaml
+    /// Interaction logic for newuser_administration.xaml
     /// </summary>
-    public partial class user_administration : Window
+    public partial class newuser_administration : Window
     {
-        public user_administration()
+        public newuser_administration()
         {
             InitializeComponent();
         }
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void delete_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void newuser_Click(object sender, RoutedEventArgs e)
-        {
-            Hide();
-            new newuser_administration() { WindowStartupLocation = WindowStartupLocation.CenterScreen }.ShowDialog();
-            Show();
         }
     }
 }

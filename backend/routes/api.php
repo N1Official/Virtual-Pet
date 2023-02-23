@@ -38,6 +38,11 @@ Route::put('/pets/{id}', [PetController::class, "update"])
 Route::delete('/pets/{id}', [PetController::class, "destroy"])
     ->name("pets.destroy");
 
+
+
 //users
 Route::get('/users', [UserController::class, "index"])
     ->name("users.index");
+
+Route::get('/users/{id}', [UserController::class, "show"])
+    ->name("users.show");

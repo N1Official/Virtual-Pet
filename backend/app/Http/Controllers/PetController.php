@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pet;
 use Illuminate\Http\Request;
+use App\Http\Resources\PetResource;
 
 class PetController extends Controller
 {
@@ -15,7 +16,7 @@ class PetController extends Controller
     public function index()
     {
         $pets = Pet::all();
-        return $pets;
+        return PetResource::collection($pets);
     }
 
     /**
@@ -37,7 +38,8 @@ class PetController extends Controller
      */
     public function show($id)
     {
-        //
+        $pet = Pet::findOrFail($id);
+        return new PetResource($pet);
     }
 
     /**

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mood;
+use App\Http\Resources\MoodResource;
+use App\Http\Requests\StoreMoodRequest;
 use Illuminate\Http\Request;
 
 class MoodController extends Controller
@@ -13,42 +16,23 @@ class MoodController extends Controller
      */
     public function index()
     {
-        //
+        $moods = Mood::all();
+        return MoodResource::collection($moods);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\StoreMoodRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreMoodRequest $request)
     {
-        //
+        $data = $request->validated();
+        $newMood = Mood::create($data);
+        return new MoodResource($newMood);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -56,8 +40,9 @@ class MoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($mood)
     {
-        //
+        $moods = Mood::findOrFail($mood);
+        $moods->delete();
     }
 }

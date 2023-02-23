@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('moods', function (Blueprint $table) {
           
-            $table->string("mood");
+            $table->string("mood")->uniqid;
+            $table->primary("mood");
         });
     }
 

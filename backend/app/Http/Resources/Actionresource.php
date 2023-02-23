@@ -15,8 +15,8 @@ class Actionresource extends JsonResource
     public function toArray($request)
     {
         return [
-            "id" => $this -> id,
-            "action" => $this->action           
+           
+            "action" => $this->pettype           
         ];
     }
 }

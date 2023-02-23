@@ -90,5 +90,5 @@ Route::get('/moods', [MoodController::class, "index"])
 Route::post('/moods', [MoodController::class, "store"])
     ->name("moods.store");
 
-Route::delete('/moods/{id}', [MoodController::class, "destroy"])
+Route::delete('/moods/{mood}', [MoodController::class, "destroy"])
     ->name("moods.destroy");

@@ -13,4 +13,6 @@ class Mood extends Model
     use HasFactory;
     protected $table = 'moods';
     public $timestamps = false;
+    protected $primaryKey = 'mood';
+    protected $keyType = 'string';
 }

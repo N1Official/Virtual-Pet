@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Action;
+use App\Http\Resources\ActionResource;
+use App\Http\Requests\StoreActionRequest;
 use Illuminate\Http\Request;
 
 class ActionController extends Controller
@@ -13,41 +16,21 @@ class ActionController extends Controller
      */
     public function index()
     {
-        //
+        $actions = Action::all();
+        return ActionResource::collection($actions);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\StoreActionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreActionRequest $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        $data = $request->validated();
+        $newAction = Action::create($data);
+        return new ActionResource($newAction);
     }
 
     /**
@@ -58,6 +41,7 @@ class ActionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $action = Action::findOrFail($id);
+        $action->delete();
     }
 }

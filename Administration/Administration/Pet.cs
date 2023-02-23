@@ -11,13 +11,13 @@ namespace Administration
     {
         public List<string> Types = new List<string>
         {
-            "tiger",
-            "panther",
-            "lion",
-            "snake",
-            "dog",
-            "cat",
-            "hamster"
+            "Tiger",
+            "Panther",
+            "Lion",
+            "Snake",
+            "Dog",
+            "Cat",
+            "Hamster"
         };
         public List<string> Moods = new List<string>
         {

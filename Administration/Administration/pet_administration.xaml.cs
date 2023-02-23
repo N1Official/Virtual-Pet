@@ -20,7 +20,6 @@ namespace Administration
     /// </summary>
     public partial class pet_administration : Window
     {
-        public bool isclosed { get; private set; } = false;
         public pet_administration()
         {
             InitializeComponent();
@@ -28,7 +27,6 @@ namespace Administration
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            isclosed = true;
             Close();
         }
 

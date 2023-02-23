@@ -6,6 +6,7 @@ use App\Models\Pet;
 use Illuminate\Http\Request;
 use App\Http\Resources\PetResource;
 use App\Http\Requests\StorePetRequest;
+use App\Http\Requests\UpdatePetRequest;
 
 class PetController extends Controller
 {
@@ -48,13 +49,18 @@ class PetController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\UpdatePetRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePetRequest $request, $id)
     {
-        //
+        $data = $request->validated();
+        $pet = Pet::findOrFail($id);
+        if ($pet->update($data)) {
+            return new PetResource($pet);
+        }
+       
     }
 
     /**

@@ -30,4 +30,6 @@ Route::get('/pets/{id}', [PetController::class, "show"])
 Route::post('/pets', [PetController::class, "store"])
     ->name("pets.store");
 
+Route::put('/pets/{id}', [PetController::class, "update"])
+    ->name("pets.update");
 //users

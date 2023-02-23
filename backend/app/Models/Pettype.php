@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pettype extends Model
 {
+    protected $fillable = [
+        "pettype"
+    ];
     use HasFactory;
     protected $table = 'pettype';
-    
+    public $timestamps = false;
 }

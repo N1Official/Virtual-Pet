@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mood extends Model
 {
+    protected $fillable = [
+        "mood"
+    ];
     use HasFactory;
     protected $table = 'moods';
-   
+    public $timestamps = false;
 }

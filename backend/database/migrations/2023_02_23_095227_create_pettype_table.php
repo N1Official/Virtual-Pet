@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pettype', function (Blueprint $table) {
-         
+            
             $table->string("pettype");
         });
     }

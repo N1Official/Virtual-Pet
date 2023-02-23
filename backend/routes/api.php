@@ -46,3 +46,6 @@ Route::get('/users', [UserController::class, "index"])
 
 Route::get('/users/{id}', [UserController::class, "show"])
     ->name("users.show");
+
+Route::post('/users', [UserController::class, "store"])
+    ->name("users.store");

@@ -3,6 +3,9 @@
 //Controllers
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PettypeController;
+use App\Http\Controllers\ActionController;
+use App\Http\Controllers\MoodController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -56,8 +59,36 @@ Route::put('/users/{id}', [UserController::class, "update"])
 Route::delete('/users/{id}', [UserController::class, "destroy"])
     ->name("users.destroy");
 
+
 //action
+Route::get('/actions', [ActionController::class, "index"])
+    ->name("actions.index");
+
+Route::post('/actions', [ActionController::class, "store"])
+    ->name("actions.store");
+
+Route::delete('/actions/{id}', [ActionController::class, "destroy"])
+    ->name("actions.destroy");
+
 
 //pettype
+Route::get('/pettype', [PettypeController::class, "index"])
+    ->name("pettype.index");
+
+Route::post('/pettype', [PettypeController::class, "store"])
+    ->name("pettype.store");
+
+Route::delete('/pettype/{id}', [PettypeController::class, "destroy"])
+    ->name("pettype.destroy");
+
+
 
 //mood
+Route::get('/moods', [MoodController::class, "index"])
+    ->name("moods.index");
+
+Route::post('/moods', [MoodController::class, "store"])
+    ->name("moods.store");
+
+Route::delete('/moods/{id}', [MoodController::class, "destroy"])
+    ->name("moods.destroy");

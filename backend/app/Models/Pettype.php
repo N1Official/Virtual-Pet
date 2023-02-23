@@ -9,5 +9,5 @@ class Pettype extends Model
 {
     use HasFactory;
     protected $table = 'pettype';
-    protected $primaryKey = 'id';
+    
 }

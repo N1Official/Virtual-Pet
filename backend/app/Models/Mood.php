@@ -9,5 +9,5 @@ class Mood extends Model
 {
     use HasFactory;
     protected $table = 'moods';
-    protected $primaryKey = 'id';
+   
 }

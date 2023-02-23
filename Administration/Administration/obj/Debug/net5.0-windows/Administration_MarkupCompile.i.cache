@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\felasznló\Desktop\Virtual-Pet\Administration\Administration\obj\Debug\net5.0-windows\
+C:\Users\Levi\Desktop\Virtual-Pet\Administration\Administration\obj\Debug\net5.0-windows\
 Administration
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\felasznló\Desktop\Virtual-Pet\Administration\Administration\App.xaml
-32121918102
+C:\Users\Levi\Desktop\Virtual-Pet\Administration\Administration\App.xaml
+7462594588
 
-9-1173929369
-193-1891726104
-MainWindow.xaml;pet_administration.xaml;user_administration.xaml;
+13-1756619443
+198-800670021
+MainWindow.xaml;newpet_administration.xaml;newuser_administration.xaml;petmood_administration.xaml;pettype_administration.xaml;pet_administration.xaml;user_administration.xaml;
 
 True
 

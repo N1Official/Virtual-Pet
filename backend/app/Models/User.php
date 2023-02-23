@@ -42,3 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+
+class User extends Model
+{
+    use HasFactory;
+    protected $table = 'users';
+    protected $primaryKey = 'id';
+}

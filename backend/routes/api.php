@@ -1,6 +1,8 @@
 <?php
 
+//Controllers
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +37,7 @@ Route::put('/pets/{id}', [PetController::class, "update"])
 
 Route::delete('/pets/{id}', [PetController::class, "destroy"])
     ->name("pets.destroy");
+
 //users
+Route::get('/users', [UserController::class, "index"])
+    ->name("users.index");

@@ -10,6 +10,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    protected $table = 'users';
+    protected $primaryKey = 'id';
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -43,9 +46,4 @@ class User extends Authenticatable
     ];
 }
 
-class User extends Model
-{
-    use HasFactory;
-    protected $table = 'users';
-    protected $primaryKey = 'id';
-}
+

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string("firstName");
             $table->string("lastName");
             $table->string("gender");
-            $table->string("birthday");
+            $table->date("birthday");
             $table->string("phone");
             $table->string("address");
             $table->string("city");

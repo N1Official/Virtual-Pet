@@ -32,4 +32,7 @@ Route::post('/pets', [PetController::class, "store"])
 
 Route::put('/pets/{id}', [PetController::class, "update"])
     ->name("pets.update");
+
+Route::delete('/pets/{id}', [PetController::class, "destroy"])
+    ->name("pets.destroy");
 //users

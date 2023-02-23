@@ -71,6 +71,7 @@ class PetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pet = Pet::findOrFail($id);
+        $pet->delete();
     }
 }

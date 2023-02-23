@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pettype;
+use App\Http\Resources\PettypeResource;
+use App\Http\Requests\StorePettypeRequest;
 use Illuminate\Http\Request;
 
 class PettypeController extends Controller
@@ -13,42 +16,24 @@ class PettypeController extends Controller
      */
     public function index()
     {
-        //
+        $pettypes = Pettype::all();
+        return PettypeResource::collection($pettypes);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\StorePettypeRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePettypeRequest $request)
     {
-        //
+        $data = $request->validated();
+        $newPettype = Pettype::create($data);
+        return new PettypeResource($newPettype);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -56,8 +41,9 @@ class PettypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($pettype)
     {
-        //
+        $pettypes = Pettype::findOrFail($pettype);
+        $pettypes->delete();
     }
 }

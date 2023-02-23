@@ -13,4 +13,6 @@ class Pettype extends Model
     use HasFactory;
     protected $table = 'pettype';
     public $timestamps = false;
+    protected $primaryKey = 'pettype';
+    protected $keyType = 'string';
 }

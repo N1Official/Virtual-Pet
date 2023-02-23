@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('pettype', function (Blueprint $table) {
             
-            $table->string("pettype");
+            $table->string("pettype")->uniqid;
+            $table->primary("pettype");
         });
     }
 

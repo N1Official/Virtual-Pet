@@ -78,7 +78,7 @@ Route::get('/pettype', [PettypeController::class, "index"])
 Route::post('/pettype', [PettypeController::class, "store"])
     ->name("pettype.store");
 
-Route::delete('/pettype/{id}', [PettypeController::class, "destroy"])
+Route::delete('/pettype/{pettype}', [PettypeController::class, "destroy"])
     ->name("pettype.destroy");
 
 

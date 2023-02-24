@@ -1,12 +1,5 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-  "dgSpecHash": "5fimGCzUCDRsUzwJ4Dl7MtM9iRwA/w1vDm6GGMAGLwgQ8JNitR7ZnEL3w7IIr1HzS8dbcXJMhYIC85fT/uI8qQ==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\felasznló\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512"
-=======
   "dgSpecHash": "oWlRbODszCBBNesmg0NtxvHy79E1QCSN4I3d7vnnT9Cc4eforiWylSzdQezGyTSSox7piJXsS22QlzKyxaTD6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
@@ -16,7 +9,13 @@
     "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
     "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
     "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512"
->>>>>>> Stashed changes
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -9,28 +9,7 @@ namespace Administration
 {
     internal class Pet
     {
-        public List<string> Types = new List<string>
-        {
-            "Tiger",
-            "Panther",
-            "Lion",
-            "Snake",
-            "Dog",
-            "Cat",
-            "Hamster"
-        };
-        public List<string> Moods = new List<string>
-        {
-            "Good",
-            "Tired",
-            "Mad",
-            "Thankful",
-            "Touched",
-            "Lonely",
-            "loved",
-            "Stressed",
-            "Bored",
-        };
+        
         //These are temporarly while the backend is on developing
         private int id;
         private int user_id;
@@ -92,17 +71,7 @@ namespace Administration
         public string Mood 
         { 
             get => mood;
-            set
-            {
-                if (Moods.Contains(value.ToLower()))
-                {
-                    mood = value;
-                }
-                else
-                {
-                    MessageBox.Show("A megadott kedv még nincs hozzáadva!");
-                }
-            }
+            set => name = value;
         }
         public double Speed
         {
@@ -185,50 +154,28 @@ namespace Administration
         public string Age_group 
         {
             get => age_group;
-            set 
-            {
-                if (age<100 || value=="Kölyök")
-                {
-                    value = "Kölyök";
-                    age_group = value;
-                }
-                if ((age>=100 && age<200) || value=="Felnőtt")
-                {
-                    value = "Felnőtt";
-                    age_group = value;
-                }
-                if ((age >= 200 && age < 300) || value == "Öreg")
-                {
-                    value = "Öreg";
-                    age_group = value;
-                }
-                if (age >299 || value=="Legendary")
-                {
-                    value = "Legendary";
-                    age_group = value;
-                }
-                else
-                {
-                    MessageBox.Show("Hiba a korcsoport megadásakor!");
-                }
-            } 
+            set => age_group = value;
         }
         public string Type 
         { 
             get => type;
-            set 
-            {
-                if (Types.Contains(value.ToLower()))
-                {
-                    type = value;
-                }
-                else
-                {
-                    MessageBox.Show("A megadott típus még nem létezik!");
-                }
-            } 
+            set => type = value;
         }
-
-
+        public Pet() { }
+        public Pet(int id, int uid,string n, string t, double h, double th, string m, double s, double heal, double skill, double age, string ageg)
+        {
+            this.id = id;
+            this.user_id = uid;
+            this.name = n;
+            this.type = t;
+            this.hunger = h;
+            this.thirst = th;
+            this.mood = m;
+            this.speed = s;
+            this.health = heal;
+            this.skill = skill;
+            this.age = age;
+            this.age_group = age_group;
+        }
     }
 }

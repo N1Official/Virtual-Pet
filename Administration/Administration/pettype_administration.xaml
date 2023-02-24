@@ -20,8 +20,7 @@
             </Grid.ColumnDefinitions>
             <Label x:Name="typeslbl" Content="TÍPUSOK:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="typescb" HorizontalAlignment="Left" Margin="64,0,0,0" VerticalAlignment="Center" Width="140" FontFamily="Cascadia Code" Grid.Column="1">
-                <ComboBoxItem Content="TÍPUS HOZZÁADÁSA"/>
-                <ComboBoxItem Content="Macska"/>
+                <ComboBoxItem Content="ÚJ TÍPUS"/>
             </ComboBox>
         </Grid>
         <Grid HorizontalAlignment="Center" Height="40" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="178">

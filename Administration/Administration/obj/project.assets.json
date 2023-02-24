@@ -133,11 +133,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-<<<<<<< Updated upstream
-        "net5.0-windows"
-=======
         "net6.0-windows"
->>>>>>> Stashed changes
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -172,8 +168,6 @@
           "net472",
           "net48",
           "net481"
-          "net48",
-          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -206,5 +200,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

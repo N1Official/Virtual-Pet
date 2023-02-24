@@ -23,8 +23,9 @@ namespace Administration
         public pet_administration()
         {
             InitializeComponent();
+            
         }
-
+        
         private void back_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -55,6 +56,9 @@ namespace Administration
         private void mood_Click(object sender, RoutedEventArgs e)
         {
             new petmood_administration() { WindowStartupLocation = WindowStartupLocation.CenterScreen }.ShowDialog();
+            RestApiHandler restapihandler = new RestApiHandler("http://localhost:8881");
+            var Pets = restapihandler.GetPets("api/pets");
+            MessageBox.Show(Pets.data.Name);
         }
 
         private void type_Click(object sender, RoutedEventArgs e)

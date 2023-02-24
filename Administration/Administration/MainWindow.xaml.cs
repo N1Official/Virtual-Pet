@@ -19,11 +19,11 @@ namespace Administration
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    { 
         public MainWindow()
         {
             InitializeComponent();
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;        
         }
 
         private void pet_administration_Click(object sender, RoutedEventArgs e)

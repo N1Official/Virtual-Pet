@@ -36,5 +36,17 @@ namespace Administration
                 // selecteduser delete  
             }
         }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            if (typescb.Text.ToLower() == "típus hozzáadása")
+            {
+                MessageBox.Show("új állat neve");
+            }
+            else
+            {
+                MessageBox.Show("nem új állatot akar felvenni");
+            }
+        }
     }
 }

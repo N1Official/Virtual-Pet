@@ -13,20 +13,23 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="191">
+        <Grid HorizontalAlignment="Center" Height="26" VerticalAlignment="Center" Width="211">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="205*"/>
             </Grid.ColumnDefinitions>
             <Label x:Name="typeslbl" Content="TÍPUSOK:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code" Grid.ColumnSpan="2"/>
-            <ComboBox x:Name="typescb" HorizontalAlignment="Left" Margin="64,0,0,0" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" Grid.Column="1"/>
+            <ComboBox x:Name="typescb" HorizontalAlignment="Left" Margin="64,0,0,0" VerticalAlignment="Center" Width="140" FontFamily="Cascadia Code" Grid.Column="1">
+                <ComboBoxItem Content="TÍPUS HOZZÁADÁSA"/>
+                <ComboBoxItem Content="Macska"/>
+            </ComboBox>
         </Grid>
         <Grid HorizontalAlignment="Center" Height="40" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="178">
             <Label x:Name="newtypelbl" Content="Új típus megnevezése:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code"/>
             <TextBox x:Name="newtypetb" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code"/>
         </Grid>
         <Button Grid.Row="2" x:Name="delete" Content="TÖRLÉS" HorizontalAlignment="Center" Margin="0,0,70,0" VerticalAlignment="Center" FontFamily="Cascadia Code" Click="delete_Click"/>
-        <Button Grid.Row="2" x:Name="save" Content="MENTÉS" HorizontalAlignment="Center" Margin="70,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
+        <Button Grid.Row="2" x:Name="save" Content="MENTÉS" HorizontalAlignment="Center" Margin="70,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code" Click="save_Click"/>
         <Button Grid.Row="3" x:Name="back" Content="VISSZA" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code" Click="back_Click"/>
     </Grid>
 </Window>

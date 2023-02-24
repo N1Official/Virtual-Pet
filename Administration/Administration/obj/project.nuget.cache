@@ -1,14 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "4JhkDigycqgauGalRxsFWmupFihv2v7dY0wvl4p/QXHXrERrSMrxbBZKU8lFkjtxRBtj/PnVfa7hx5bx4HGGzg==",
+<<<<<<< Updated upstream
+  "dgSpecHash": "5fimGCzUCDRsUzwJ4Dl7MtM9iRwA/w1vDm6GGMAGLwgQ8JNitR7ZnEL3w7IIr1HzS8dbcXJMhYIC85fT/uI8qQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\boton\\OneDrive\\Documents\\git\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
+  "projectFilePath": "C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\boton\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
-    "C:\\Users\\boton\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\boton\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\boton\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\boton\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+    "C:\\Users\\felasznló\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512"
+=======
+  "dgSpecHash": "oWlRbODszCBBNesmg0NtxvHy79E1QCSN4I3d7vnnT9Cc4eforiWylSzdQezGyTSSox7piJXsS22QlzKyxaTD6w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\felasznló\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
+    "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.13\\microsoft.netcore.app.host.win-x64.6.0.13.nupkg.sha512",
+    "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\felasznló\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512"
+>>>>>>> Stashed changes
   ],
   "logs": []
 }

@@ -19,24 +19,9 @@ namespace Administration
     /// </summary>
     public partial class user_administration : Window
     {
-        List<User> Users = new List<User>() 
-        { 
-            new User(){Id=1,Username="N1off",Pets_id="2",Email="asd@gmail.com",Password="asd",FirstName="laci",LastName="maki",Gender="Férfi",Birthday=DateTime.Today,Phone="+3604204",Address="kisasdasd",City="bp",State="pest",Zipcode=2211,Country="HU",},
-            new User(){Id=2,Username="asdasdsadsadasd",Pets_id="5",Email="asd@gmffffffail.com",Password="asd",FirstName="laci",LastName="maki",Gender="Férfi",Birthday=DateTime.Today,Phone="+360575874204",Address="kisasdasd",City="bp",State="pest",Zipcode=2211,Country="HU"},
-            new User(){Id=3,Username="N1ozukluklhkjff",Pets_id="10",Email="asd@gmakuizkil.com",Password="asd",FirstName="lrrraci",LastName="maki",Gender="Férfi",Birthday=DateTime.Today,Phone="+36044424204",Address="kisasdasd",City="bp",State="pest",Zipcode=2211,Country="HU"}
-        };
-        List<string> Genders = new List<string>() { "Férfi", "Nő" };
         public user_administration()
         {
             InitializeComponent();
-            for (int i = 0; i < Users.Count; i++)
-            {
-                idcb.Items.Add(Users[i].Id);
-            }
-            for (int i = 0; i < Genders.Count; i++)
-            {
-                gendercb.Items.Add(Genders[i]);
-            }
         }
 
         private void back_Click(object sender, RoutedEventArgs e)
@@ -47,27 +32,20 @@ namespace Administration
         private void save_Click(object sender, RoutedEventArgs e)
         {
             User changedUser = new User();
-            changedUser.Id = int.Parse(idcb.Text); 
-            changedUser.Pets_id = pets_idtb.Text;
-            changedUser.Email = emailtb.Text;
-            changedUser.Password = pwtb.Password;
-            changedUser.FirstName = firstnametb.Text;
-            changedUser.LastName = lastnametb.Text;
-            changedUser.Gender = gendercb.Text;
-            changedUser.Birthday = DateTime.Parse(birthdaydp.Text);
-            changedUser.Phone = phonetb.Text;
-            changedUser.Address = addresstb.Text;
-            changedUser.City = addresstb.Text;
-            changedUser.State = statetb.Text;
-            changedUser.Zipcode = int.Parse(zipcodetb.Text);
-            changedUser.Country = countrytb.Text;
-            for (int i = 0; i < Users.Count; i++)
-            {
-                if (Users[i].Id == changedUser.Id)
-                {
-                    Users[i] = changedUser;
-                }
-            }
+            changedUser.id = int.Parse(idcb.Text); 
+            changedUser.pets_id = pets_idtb.Text;
+            changedUser.email = emailtb.Text;
+            changedUser.password = pwtb.Password;
+            changedUser.firstName = firstnametb.Text;
+            changedUser.lastName = lastnametb.Text;
+            changedUser.gender = gendercb.Text;
+            changedUser.birthday = DateTime.Parse(birthdaydp.Text);
+            changedUser.phone = phonetb.Text;
+            changedUser.address = addresstb.Text;
+            changedUser.city = addresstb.Text;
+            changedUser.state = statetb.Text;
+            changedUser.zipcode = int.Parse(zipcodetb.Text);
+            changedUser.country = countrytb.Text;
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)
@@ -75,7 +53,7 @@ namespace Administration
             if (MessageBox.Show("Valóban törölni akarja ezt a felhasználót?", "Törlés", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 int ind = int.Parse(idcb.Text);
-                Users.RemoveAt(ind-1);
+                //Users.RemoveAt(ind-1);
                 idcb.Items.Remove(ind);
                 pets_idtb.Text = null;
                 usernametb.Text = null;
@@ -102,7 +80,7 @@ namespace Administration
 
         private void idcb_DropDownClosed(object sender, EventArgs e)
         {
-            if (idcb.Text != "")
+            /*if (idcb.Text != "")
             {
                 int index = int.Parse(idcb.Text)-1;
                 pets_idtb.Text = Users[index].Pets_id;
@@ -119,7 +97,7 @@ namespace Administration
                 zipcodetb.Text = Users[index].Zipcode.ToString();
                 citytb.Text = Users[index].City;
                 addresstb.Text = Users[index].Address;
-            }
+            }*/
         }
     }
 }

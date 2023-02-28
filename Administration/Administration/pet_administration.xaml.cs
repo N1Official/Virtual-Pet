@@ -21,63 +21,33 @@ namespace Administration
     /// </summary>
     public partial class pet_administration : Window
     {
-        public List<string> Types = new List<string>
-        {
-            "Tiger",
-            "Panther",
-            "Lion",
-            "Snake",
-            "Dog",
-            "Cat",
-            "Hamster"
-        };
-        public List<string> Moods = new List<string>
-        {
-            "Good",
-            "Tired",
-            "Mad",
-            "Thankful",
-            "Touched",
-            "Lonely",
-            "loved",
-            "Stressed",
-            "Bored",
-        };
-        List<Pet> Pets = new List<Pet>()
-        {
-            new Pet(1,0,"tiger","null",0,0,"null",12,0,0,0,"null"),
-            new Pet(2,0,"panther","null",0,0,"null",20,0,0,0,"null"),
-            new Pet(3,0,"lion","null",0,0,"null",0,0,30,0,"null"),
-            new Pet(4, 0, "snake", "null", 0, 0, "null",50, 0, 0, 0, "null"),
-            new Pet(5, 0, "dog", "null", 0, 0, "null", 0, 60, 0, 0, "null"),
-            new Pet(6, 0, "cat", "null", 0, 0, "null", 0, 70, 0, 0, "null"),
-            new Pet(7, 0, "hamster", "null", 0, 0, "null", 0, 20, 0, 0, "null"),
-        };
-        public List<string> Age_Groups = new List<string>
-        {
-            "Kölyök",
-            "Felnőtt",
-            "Öreg",
-            "Legendary"
-        };
+        static RestApiHandler restapihandler = new RestApiHandler("http://localhost:8881");
         public pet_administration()
         {
             InitializeComponent();
-            for (int i = 0; i < Pets.Count; i++)
+            var Pets = restapihandler.GetPets("api/pets");
+            for (int i = 0; i < Pets.Length; i++)
             {
-                idcb.Items.Add(Pets[i].Id);
+                idcb.Items.Add((i+1));
             }
-            for (int i = 0; i < Moods.Count; i++)
+            var Moods = restapihandler.GetMoods("api/moods");
+            for (int i = 0; i < Moods.Length; i++)
             {
-                moodcb.Items.Add(Moods[i]);
+                moodcb.Items.Add(Moods[i].mood);
             }
-            for (int i = 0; i < Types.Count; i++)
+            var Types = restapihandler.GetPetTypes("api/pettype");
+            for (int i = 0; i < Types.Length; i++)
             {
-                typecb.Items.Add(Types[i]);
+                typecb.Items.Add(Types[i].pettype);
             }
-            for (int i = 0; i < Age_Groups.Count; i++)
+            for (int i = 0; i < Types.Length; i++)
             {
-                agegroupcb.Items.Add(Age_Groups[i]);
+                typecb.Items.Add(Types[i].pettype);
+            }
+            string[] korcsop = new string[] { "Kölyök", "Felnőtt", "Legendary"};
+            for (int i = 0; i < korcsop.Length; i++)
+            {
+                agegroupcb.Items.Add(korcsop[i]);
             }
         }
         
@@ -88,25 +58,19 @@ namespace Administration
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
+
             Pet changedPet = new Pet();
-            changedPet.Id = int.Parse(idcb.Text);
-            changedPet.Name = nametb.Text;
-            changedPet.Type = typecb.Text;
-            changedPet.Hunger = hungerslider.Value;
-            changedPet.Thirst = thirstslider.Value;
-            changedPet.Mood = moodcb.Text;
-            changedPet.Speed = speedslider.Value;
-            changedPet.Health = healthslider.Value;
-            changedPet.Skill = skillslider.Value;
-            changedPet.Age = double.Parse(agetb.Text);
-            changedPet.Age_group = agegroupcb.Text;
-            for (int i = 0; i < Pets.Count; i++)
-            {
-                if (Pets[i].Id == changedPet.Id)
-                {
-                    Pets[i] = changedPet;
-                }
-            }
+            changedPet.id = int.Parse(idcb.Text);
+            changedPet.name = nametb.Text;
+            changedPet.type = typecb.Text;
+            changedPet.hunger = hungerslider.Value;
+            changedPet.thirst = thirstslider.Value;
+            changedPet.mood = moodcb.Text;
+            changedPet.speed = speedslider.Value;
+            changedPet.health = healthslider.Value;
+            changedPet.skill = skillslider.Value;
+            changedPet.age = double.Parse(agetb.Text);
+            changedPet.age_group = agegroupcb.Text;
         }
 
         private void newpet_Click(object sender, RoutedEventArgs e)
@@ -118,9 +82,6 @@ namespace Administration
         private void mood_Click(object sender, RoutedEventArgs e)
         {
             new petmood_administration() { WindowStartupLocation = WindowStartupLocation.CenterScreen }.ShowDialog();
-            /*RestApiHandler restapihandler = new RestApiHandler("http://localhost:8881");
-            var Pets = restapihandler.GetPets("api/pets");
-            MessageBox.Show(Pets.data.Name);*/
         }
 
         private void type_Click(object sender, RoutedEventArgs e)
@@ -133,7 +94,7 @@ namespace Administration
             if (MessageBox.Show("Valóban törölni akarja ezt a kisállatot?", "Törlés", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 int ind = int.Parse(idcb.Text);
-                Pets.RemoveAt(ind);
+                //Pets.RemoveAt(ind);
                 idcb.Items.Remove(ind);
                 user_idtb.Text = null;
                 nametb.Text = null;
@@ -150,21 +111,22 @@ namespace Administration
         }
 
         private void idcb_DropDownClosed(object sender, EventArgs e)
-        {  
+        {
+            var Pets = restapihandler.GetPets("api/pets");
             if (idcb.Text != "")
             {
-                int index = int.Parse(idcb.Text) - 1;
-                user_idtb.Text = Pets[index].User_id.ToString();
-                nametb.Text = Pets[index].Name;
-                typecb.SelectedValue = Pets[index].Type;
-                skillslider.Value = Pets[index].Skill;
-                thirstslider.Value = Pets[index].Thirst;
-                speedslider.Value = Pets[index].Speed;
-                hungerslider.Value = Pets[index].Hunger;
-                healthslider.Value = Pets[index].Health;
-                agetb.Text = Pets[index].Age.ToString();
-                agegroupcb.SelectedValue = Pets[index].Age_group;
-                moodcb.SelectedValue = Pets[index].Mood;
+                int index = int.Parse(idcb.Text)-1;
+                user_idtb.Text = Pets[index].user_id.ToString();
+                nametb.Text = Pets[index].name;
+                typecb.SelectedValue = Pets[index].type;
+                skillslider.Value = Pets[index].skill;
+                thirstslider.Value = Pets[index].thirst;
+                speedslider.Value = Pets[index].speed;
+                hungerslider.Value = Pets[index].hunger;
+                healthslider.Value = Pets[index].health;
+                agetb.Text = Pets[index].age.ToString();
+                agegroupcb.SelectedValue = Pets[index].age_group;
+                moodcb.SelectedValue = Pets[index].mood;
             }
         }
     }

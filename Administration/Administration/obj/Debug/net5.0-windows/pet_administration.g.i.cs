@@ -253,7 +253,7 @@ namespace Administration {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Administration;V1.0.0.0;component/pet_administration.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Administration;component/pet_administration.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\pet_administration.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

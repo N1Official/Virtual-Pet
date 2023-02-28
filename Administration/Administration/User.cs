@@ -10,28 +10,28 @@ namespace Administration
 {
     internal class User
     {
-        private int id;
-        private string pets_id;
-        private string username;
-        private string email;
-        private string password;
-        private string firstName;
-        private string lastName;
-        private string gender;
-        private DateTime birthday;
-        private string phone;
-        private string address;
-        private string city;
-        private string state;
-        private int zipcode;
-        private string country;
+        private int _id;
+        private string _pets_id;
+        private string _username;
+        private string _email;
+        private string _password;
+        private string _firstName;
+        private string _lastName;
+        private string _gender;
+        private DateTime _birthday;
+        private string _phone;
+        private string _address;
+        private string _city;
+        private string _state;
+        private int _zipcode;
+        private string _country;
 
-        public int Id { get => id; set => id = value; }
-        public string Pets_id { get => pets_id; set => pets_id = value; }
-        public string Username { get => username; set => username = value; }
-        public string Email
+        public int id { get => _id; set => _id = value; }
+        public string pets_id { get => _pets_id; set => _pets_id = value; }
+        public string username { get => _username; set => _username = value; }
+        public string email
         { 
-            get => email;
+            get => _email;
             set{
                 static bool IsValidEmail(string mail)
                 {
@@ -48,7 +48,7 @@ namespace Administration
                 bool isOk = IsValidEmail(value);
                 if (isOk)
                 {
-                    email = value;
+                    _email = value;
                 }
                 else
                 {
@@ -56,54 +56,54 @@ namespace Administration
                 }
             } 
         }
-        public string Password { get => password; set => password = value; }
-        public string FirstName 
+        public string password { get => _password; set => _password = value; }
+        public string firstName 
         { 
-            get => firstName;
+            get => _firstName;
             set {
                 bool result;
                 result = Char.IsUpper(value, 0);
                 if (result)
                 {
-                    firstName = value;
+                    _firstName = value;
                 }
                 else
                 {
                     string big = (value.ToUpper());
-                    firstName = big.Substring(0, 1) + value.Substring(1);
+                    _firstName = big.Substring(0, 1) + value.Substring(1);
                 }
             } 
         }
-        public string LastName
+        public string lastName
         { 
-            get => lastName;
+            get => _lastName;
             set
             {
                 bool result;
                 result = Char.IsUpper(value, 0);
                 if (result)
                 {
-                    lastName = value;
+                    _lastName = value;
                 }
                 else
                 {
                     string big = (value.ToUpper());
-                    lastName = big.Substring(0, 1) + value.Substring(1);
+                    _lastName = big.Substring(0, 1) + value.Substring(1);
                 }
             }
         }
-        public string Gender 
+        public string gender 
         { 
-            get => gender;
+            get => _gender;
             set 
             {
                 if (value == "ferfi" || value == "férfi" || value == "male" || value == "Male" || value == "Férfi")
                 {
-                    gender = value;
+                    _gender = "Férfi";
                 }
                 else if (value == "no" || value == "nő" || value == "Female" || value == "female" || value == "Nő")
                 {
-                    gender = value;
+                    _gender = "Nő";
                 }
                 else
                 {
@@ -111,15 +111,15 @@ namespace Administration
                 }
             }
         }
-        public DateTime Birthday { get => birthday; set => birthday = value; }
-        public string Phone 
+        public DateTime birthday { get => _birthday; set => _birthday = value; }
+        public string phone 
         { 
-            get => phone;
+            get => _phone;
             set
             {
                 if (value.StartsWith("+"))
                 {
-                    phone = value;
+                    _phone = value;
                 }
                 else
                 {
@@ -127,17 +127,17 @@ namespace Administration
                 }
             }
         }
-        public string Address { get => address; set => address = value; }
-        public string City { get => city; set => city = value; }
-        public string State { get => state; set => state = value; }
-        public int Zipcode 
+        public string address { get => _address; set => _address = value; }
+        public string city { get => _city; set => _city = value; }
+        public string state { get => _state; set => _state = value; }
+        public int zipcode 
         { 
-            get => zipcode;
+            get => _zipcode;
             set
             {
                 try
                 {
-                    zipcode = value;
+                    _zipcode = value;
                 }
                 catch (FormatException ex)
                 {
@@ -146,7 +146,7 @@ namespace Administration
 
             }
         }
-        public string Country { get => country; set => country = value; }
+        public string country { get => _country; set => _country = value; }
 
     }
 }

@@ -8,27 +8,26 @@ using System.Windows;
 namespace Administration
 {
     internal class Pet
-    {
-        
+    {   
         //These are temporarly while the backend is on developing
-        private int id;
-        private int user_id;
-        private string name;
-        private string type;
-        private double hunger;
-        private double thirst;
-        private string mood;
-        private double speed;
-        private double health;
-        private double skill;
-        private double age;
-        private string age_group;
-        public int Id { get => id; set => id = value; }
-        public int User_id { get => user_id; set => user_id = value; }
-        public string Name { get => name; set => name = value; }
-        public double Hunger 
+        private int _id;
+        private int _user_id;
+        private string _name;
+        private string _type;
+        private double _hunger;
+        private double _thirst;
+        private string _mood;
+        private double _speed;
+        private double _health;
+        private double _skill;
+        private double _age;
+        private string _age_group;
+        public int id { get => _id; set => _id = value; }
+        public int user_id { get => _user_id; set => _user_id = value; }
+        public string name { get => _name; set => _name = value; }
+        public double hunger 
         { 
-            get => hunger;
+            get => _hunger;
             set 
             {
                 if (value<0)
@@ -38,18 +37,18 @@ namespace Administration
                 else if (value>10)
                 {
                     value = 10;
-                    hunger = value;
+                    _hunger = value;
                     MessageBox.Show("Maximális éhségszint!");
                 }
                 else
                 {
-                    hunger = value;
+                    _hunger = value;
                 }
             } 
         }
-        public double Thirst 
+        public double thirst 
         {
-            get => thirst;
+            get => _thirst;
             set
             {
                 if (value < 0)
@@ -64,18 +63,18 @@ namespace Administration
                 }
                 else
                 {
-                    thirst = value;
+                    _thirst = value;
                 }
             }
         }
-        public string Mood 
+        public string mood 
         { 
-            get => mood;
-            set => name = value;
+            get => _mood;
+            set => _mood = value;
         }
-        public double Speed
+        public double speed
         {
-            get => speed;
+            get => _speed;
             set
             {
                 if (value <= 0)
@@ -85,18 +84,18 @@ namespace Administration
                 else if (value > 100)
                 {
                     value = 100;
-                    hunger = value;
+                    _speed = value;
                     MessageBox.Show("Maximális gyorsaság!");
                 }
                 else
                 {
-                    speed = value;
+                    _speed = value;
                 }
             }
         }
-        public double Health 
+        public double health 
         {
-            get => health;
+            get => _health;
             set
             {
                 if (value <= 0)
@@ -106,18 +105,18 @@ namespace Administration
                 else if (value > 100)
                 {
                     value = 100;
-                    hunger = value;
+                    _health = value;
                     MessageBox.Show("Maximális életerő!");
                 }
                 else
                 {
-                    health = value;
+                    _health = value;
                 }
             }
         }
-        public double Skill 
+        public double skill 
         { 
-            get => skill;
+            get => _skill;
             set
             {
                 if (value < 0)
@@ -127,18 +126,18 @@ namespace Administration
                 else if (value > 100)
                 {
                     value = 100;
-                    hunger = value;
+                    _skill = value;
                     MessageBox.Show("Maximális ügyesség!");
                 }
                 else
                 {
-                    skill = value;
+                    _skill = value;
                 }
             }
         }
-        public double Age 
+        public double age 
         {
-            get => age;
+            get => _age;
             set
             {
                 if (value < 0)
@@ -147,19 +146,19 @@ namespace Administration
                 }
                 else
                 {
-                    age = value;
+                    _age = value;
                 }
             }
         }
-        public string Age_group 
+        public string age_group 
         {
-            get => age_group;
-            set => age_group = value;
+            get => _age_group;
+            set => _age_group = value;
         }
-        public string Type 
+        public string type 
         { 
-            get => type;
-            set => type = value;
+            get => _type;
+            set => _type = value;
         }
         public Pet() { }
         public Pet(int id, int uid,string n, string t, double h, double th, string m, double s, double heal, double skill, double age, string ageg)

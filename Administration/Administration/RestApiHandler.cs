@@ -11,21 +11,8 @@ using System.Threading.Tasks;
 
 namespace Administration
 {
-    class PetsData
-    {
-        public Pet data;
-    }
-    class UsersData
-    {
-        public User data;
-    }
-    class MoodsData
-    {
-        public string data;
-    }
-    class PetTypesData
-    {
-        public string data;
+    class DataHeader<T> { 
+        public T data { get; set; }
     }
     internal class RestApiHandler // connection is good, but returns with null
     {
@@ -39,47 +26,47 @@ namespace Administration
                 );
         }
         
-        public PetsData GetPets(string path) 
+        public Pet[] GetPets(string path) 
         {
-            PetsData returnvalue = new PetsData();
+            Pet[] returnvalue = new Pet[0];
             HttpResponseMessage response = client.GetAsync(path).Result;
             if (response.IsSuccessStatusCode)
             {
                 string str = response.Content.ReadAsStringAsync().Result;
-                returnvalue = JsonSerializer.Deserialize<PetsData>(str);
+                returnvalue = JsonSerializer.Deserialize<DataHeader<Pet[]>>(str)!.data;
             }
             return returnvalue;
         }
-        public UsersData GetUsers(string path)
+        public User[] GetUsers(string path)
         {
-            UsersData returnvalue = new UsersData();
+            User[] returnvalue = new User[0];
             HttpResponseMessage response = client.GetAsync(path).Result;
             if (response.IsSuccessStatusCode)
             {
                 string str = response.Content.ReadAsStringAsync().Result;
-                returnvalue = JsonSerializer.Deserialize<UsersData>(str);
+                returnvalue = JsonSerializer.Deserialize<DataHeader<User[]>>(str)!.data;
             }
             return returnvalue;
         }
-        public MoodsData GetMoods(string path)
+        public Mood[] GetMoods(string path)
         {
-            MoodsData returnvalue = new MoodsData();
+            Mood[] returnvalue = new Mood[0];
             HttpResponseMessage response = client.GetAsync(path).Result;
             if (response.IsSuccessStatusCode)
             {
                 string str = response.Content.ReadAsStringAsync().Result;
-                returnvalue = JsonSerializer.Deserialize<MoodsData>(str);
+                returnvalue = JsonSerializer.Deserialize<DataHeader<Mood[]>>(str)!.data;
             }
             return returnvalue;
         }
-        public PetTypesData GetPetTypes(string path)
+        public PetType[] GetPetTypes(string path)
         {
-            PetTypesData returnvalue = new PetTypesData();
+            PetType[] returnvalue = new PetType[0];
             HttpResponseMessage response = client.GetAsync(path).Result;
             if (response.IsSuccessStatusCode)
             {
                 string str = response.Content.ReadAsStringAsync().Result;
-                returnvalue = JsonSerializer.Deserialize<PetTypesData>(str);
+                returnvalue = JsonSerializer.Deserialize<DataHeader<PetType[]>>(str)!.data;
             }
             return returnvalue;
         }
@@ -111,20 +98,20 @@ namespace Administration
             response.EnsureSuccessStatusCode();
             return response.Headers.Location;
         }
-        public async Task<PetsData> UpdatePetAsync(PetsData changedPet)
+        public async Task<DataHeader<Pet>> UpdatePetAsync(DataHeader<Pet> changedPet)
         {
-            HttpResponseMessage response = await client.PutAsJsonAsync($"api/pets/{changedPet.data.Id}", changedPet);
+            HttpResponseMessage response = await client.PutAsJsonAsync($"api/pets/{changedPet.data.id}", changedPet);
             response.EnsureSuccessStatusCode();
             string str = response.Content.ReadAsStringAsync().Result;
-            changedPet = JsonSerializer.Deserialize<PetsData>(str);
+            changedPet = JsonSerializer.Deserialize<DataHeader<Pet>>(str)!;
             return changedPet;
         }
-        public async Task<UsersData> UpdateUserAsync(UsersData changedUser)
+        public async Task<DataHeader<Pet>> UpdateUserAsync(DataHeader<Pet> changedUser)
         {
-            HttpResponseMessage response = await client.PutAsJsonAsync($"api/users/{changedUser.data.Id}", changedUser);
+            HttpResponseMessage response = await client.PutAsJsonAsync($"api/users/{changedUser.data.id}", changedUser);
             response.EnsureSuccessStatusCode();
             string str = response.Content.ReadAsStringAsync().Result;
-            changedUser = JsonSerializer.Deserialize<UsersData>(str);
+            changedUser = JsonSerializer.Deserialize<DataHeader<Pet>>(str)!;
             return changedUser;
         }
         public async Task<HttpStatusCode> DeleteUserAsync(string id)

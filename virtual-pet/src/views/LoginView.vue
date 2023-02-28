@@ -3,7 +3,7 @@
         <form @submit.prevent="login">
             <input type="email" id="email" v-model="userData.email" placeholder="Email">
             <input type="password" v-model="userData.password" placeholder="Jelszó">
-            <button type="submit">Bejelentkezés</button>
+            <button type="submit" @click="login()">Bejelentkezés</button>
         </form>
     </div>
 </template>
@@ -18,6 +18,10 @@ const userData = reactive({
     email: '',
     password: ''
 });
+
+function login() {
+    router.push('/');
+}
 
 // const error = ref(null);
 

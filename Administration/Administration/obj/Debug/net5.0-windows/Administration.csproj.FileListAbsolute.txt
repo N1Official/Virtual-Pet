@@ -102,3 +102,6 @@ C:\Users\Levi\Desktop\Virtual-Pet\Administration\Administration\obj\Debug\net5.0
 C:\Users\Levi\Desktop\Virtual-Pet\Administration\Administration\obj\Debug\net5.0-windows\ref\Administration.dll
 C:\Users\Levi\Desktop\Virtual-Pet\Administration\Administration\obj\Debug\net5.0-windows\Administration.pdb
 C:\Users\Levi\Desktop\Virtual-Pet\Administration\Administration\obj\Debug\net5.0-windows\Administration.genruntimeconfig.cache
+C:\Users\Suli\Desktop\Virtual-Pet\Administration\Administration\obj\Debug\net5.0-windows\Administration.dll
+C:\Users\Suli\Desktop\Virtual-Pet\Administration\Administration\obj\Debug\net5.0-windows\ref\Administration.dll
+C:\Users\Suli\Desktop\Virtual-Pet\Administration\Administration\obj\Debug\net5.0-windows\Administration.pdb

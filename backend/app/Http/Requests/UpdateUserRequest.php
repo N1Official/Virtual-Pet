@@ -24,6 +24,7 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
+	    "pid" =>"required",
             "username" =>"required|min:3",
             "email" =>"required",
             "password"=>"required",

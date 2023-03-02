@@ -25,7 +25,6 @@ class StorePetRequest extends FormRequest
     {
         return [
             "name" =>"required|min:1|max:15",
-	    "uid" =>"required",
             "type" =>"required",
             "hunger"=>"required",
             "thirst"=>"required",

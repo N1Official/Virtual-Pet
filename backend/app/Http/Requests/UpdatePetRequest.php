@@ -24,7 +24,6 @@ class UpdatePetRequest extends FormRequest
     public function rules()
     {
         return [
-	    "uid" =>"required",
             "name" =>"required|min:1|max:15",
             "type" =>"required",
             "hunger"=>"required",

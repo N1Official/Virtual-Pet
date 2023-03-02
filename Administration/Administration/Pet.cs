@@ -161,10 +161,10 @@ namespace Administration
             set => _type = value;
         }
         public Pet() { }
-        public Pet(int id, int uid,string n, string t, double h, double th, string m, double s, double heal, double skill, double age, string ageg)
+        public Pet(int id, string uid,string n, string t, double h, double th, string m, double s, double heal, double skill, double age, string ageg)
         {
             this.id = id;
-            this.user_id = uid;
+            this.uid = uid;
             this.name = n;
             this.type = t;
             this.hunger = h;

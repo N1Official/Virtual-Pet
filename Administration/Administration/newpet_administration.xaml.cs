@@ -60,7 +60,7 @@ namespace Administration
             {
                 Pet newPet = new Pet();
                 newPet.id = int.Parse(idtb.Text);
-                newPet.user_id = int.Parse(user_idtb.Text);
+                newPet.uid = user_idtb.Text;
                 newPet.name = nametb.Text;
                 newPet.type = typecb.Text;
                 newPet.hunger = hungerslider.Value;
@@ -72,7 +72,7 @@ namespace Administration
                 newPet.age = double.Parse(agetb.Text);
                 newPet.age_group = agegroupcb.Text;
                 restapihandler.CreatePet(newPet);
-                MessageBox.Show("A következő állat felvéve: \n\tNeve:\t" + newPet.name + "\n\tTípusa:\t" + newPet.type + "\n\tÉhség szintje:\t" + Math.Round(newPet.hunger, 0) + "\n\tSzomjúság szintje:\t" + Math.Round(newPet.thirst, 0) + "\n\tGyorsaság:\t" + Math.Round(newPet.speed, 0) + "\n\tÉleterő:\t" + Math.Round(newPet.health, 0) + "\n\tKor:\t" + newPet.age + "\n\tKorcsoport:\t" + newPet.age_group + "\n\tÜgyesség:\t" + Math.Round(newPet.skill, 0) + "\n\tHangulat:\t" + newPet.mood + "\n\tGazdaAzonosító:\t" + newPet.user_id);
+                MessageBox.Show("A következő állat felvéve: \n\tNeve:\t" + newPet.name + "\n\tTípusa:\t" + newPet.type + "\n\tÉhség szintje:\t" + Math.Round(newPet.hunger, 0) + "\n\tSzomjúság szintje:\t" + Math.Round(newPet.thirst, 0) + "\n\tGyorsaság:\t" + Math.Round(newPet.speed, 0) + "\n\tÉleterő:\t" + Math.Round(newPet.health, 0) + "\n\tKor:\t" + newPet.age + "\n\tKorcsoport:\t" + newPet.age_group + "\n\tÜgyesség:\t" + Math.Round(newPet.skill, 0) + "\n\tHangulat:\t" + newPet.mood + "\n\tGazdaAzonosító:\t" + newPet.uid);
             }
             idtb.Text = null;
             nametb.Text = null;

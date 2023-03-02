@@ -11,7 +11,7 @@ namespace Administration
     {   
         //These are temporarly while the backend is on developing
         private int _id;
-        private int _user_id;
+        private string _uid;
         private string _name;
         private string _type;
         private double _hunger;
@@ -23,7 +23,7 @@ namespace Administration
         private double _age;
         private string _age_group;
         public int id { get => _id; set => _id = value; }
-        public int user_id { get => _user_id; set => _user_id = value; }
+        public string uid { get => _uid; set => _uid = value; }
         public string name { get => _name; set => _name = value; }
         public double hunger 
         { 

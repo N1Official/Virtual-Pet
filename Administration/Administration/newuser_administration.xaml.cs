@@ -51,7 +51,7 @@ namespace Administration
             {
                 User newUser = new User();
                 newUser.id = int.Parse(idtb.Text);
-                newUser.pets_id = pets_idtb.Text;
+                newUser.pid = pets_idtb.Text;
                 newUser.email = emailtb.Text;
                 newUser.password = pwtb.Password;
                 newUser.firstName = firstnametb.Text;

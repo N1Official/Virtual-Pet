@@ -17,7 +17,10 @@ class PetSeeder extends Seeder
     {
         //tiger
         DB::table("pets")->insert([
+<<<<<<< HEAD
 	    'uid'=>'1',
+=======
+>>>>>>> parent of 39d9bad (updatedseedersandmigration)
             'name'=>'tiger',
             'type' =>'tiger',
             'hunger'=>10,
@@ -32,7 +35,10 @@ class PetSeeder extends Seeder
 
         //panther
         DB::table("pets")->insert([
+<<<<<<< HEAD
 	    'uid'=>'2',
+=======
+>>>>>>> parent of 39d9bad (updatedseedersandmigration)
             'name'=>'panther',
             'type' =>'panther',
             'hunger'=>10,
@@ -47,7 +53,10 @@ class PetSeeder extends Seeder
 
         //lion
         DB::table("pets")->insert([
+<<<<<<< HEAD
 	    'uid'=>'1',
+=======
+>>>>>>> parent of 39d9bad (updatedseedersandmigration)
             'name'=>'lion',
             'type' =>'lion',
             'hunger'=>10,
@@ -62,7 +71,10 @@ class PetSeeder extends Seeder
 
         //snake
         DB::table("pets")->insert([
+<<<<<<< HEAD
 	    'uid'=>'1',
+=======
+>>>>>>> parent of 39d9bad (updatedseedersandmigration)
             'name'=>'snake',
             'type' =>'snake',
             'hunger'=>10,
@@ -77,7 +89,10 @@ class PetSeeder extends Seeder
 
         //dog
         DB::table("pets")->insert([
+<<<<<<< HEAD
 	    'uid'=>'2',
+=======
+>>>>>>> parent of 39d9bad (updatedseedersandmigration)
             'name'=>'dog',
             'type' =>'dog',
             'hunger'=>10,
@@ -92,7 +107,10 @@ class PetSeeder extends Seeder
 
         //cat
         DB::table("pets")->insert([
+<<<<<<< HEAD
 	    'uid'=>'1',
+=======
+>>>>>>> parent of 39d9bad (updatedseedersandmigration)
             'name'=>'cat',
             'type' =>'cat',
             'hunger'=>10,
@@ -107,7 +125,10 @@ class PetSeeder extends Seeder
 
         //hamster
         DB::table("pets")->insert([
+<<<<<<< HEAD
 	    'uid'=>'2',
+=======
+>>>>>>> parent of 39d9bad (updatedseedersandmigration)
             'name'=>'hamster',
             'type' =>'hamster',
             'hunger'=>10,

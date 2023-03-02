@@ -19,22 +19,14 @@ namespace Administration
     /// </summary>
     public partial class pettype_administration : Window
     {
-        public List<string> Types = new List<string>
-        {
-            "Tiger",
-            "Panther",
-            "Lion",
-            "Snake",
-            "Dog",
-            "Cat",
-            "Hamster"
-        };
+        static RestApiHandler restapihandler = new RestApiHandler("http://localhost:8881");
+        static PetType[] Types = restapihandler.GetPetTypes("api/pettype");
         public pettype_administration()
         {
             InitializeComponent();
-            for (int i = 0; i < Types.Count; i++)
+            for (int i = 0; i < Types.Length; i++)
             {
-                typescb.Items.Add(Types[i]);
+                typescb.Items.Add(Types[i].pettype);
             }
         }
 
@@ -47,15 +39,9 @@ namespace Administration
         {
             if (MessageBox.Show("Valóban törölni akarja ezt a típust?", "Törlés", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                string ind = typescb.Text;
-                for (int i = 0; i < Types.Count; i++)
-                {
-                    if (Types[i].ToLower() == ind.ToLower())
-                    {
-                        Types.RemoveAt(i);
-                    }
-                }
-                typescb.Items.Remove(ind);
+                string deltyp = typescb.Text;
+                restapihandler.DeletePetTypeAsync(deltyp);
+                typescb.Items.Remove(deltyp);
             }
         }
 
@@ -63,8 +49,28 @@ namespace Administration
         {
             if (typescb.Text == "ÚJ TÍPUS" && newtypetb.Text != "")
             {
-                Types.Add(newtypetb.Text);
-                typescb.Items.Add(newtypetb.Text);
+                bool checker = false;
+                for (int i = 0; i < Types.Length; i++)
+                {
+                    if (Types[i].pettype.ToLower() == newtypetb.Text.ToLower())
+                    {
+                        checker = true;
+                        break;
+                    }
+                }
+                if (checker)
+                {
+                    MessageBox.Show("Ez a típus már létezik!");
+                }
+                else
+                {
+                    PetType newtype = new PetType();
+                    newtype.pettype = newtypetb.Text;
+                    restapihandler.CreatePetType(newtype);
+                    typescb.Items.Add(newtypetb.Text);
+                    MessageBox.Show("Új típus hozzáadva!");
+                }
+                
             }
         }
     }

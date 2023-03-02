@@ -70,14 +70,14 @@ namespace Administration
             }
             return returnvalue;
         }
-        public async Task<Uri> CreateMood(string newMood)
+        public async Task<Uri> CreateMood(Mood newMood)
         {
             HttpResponseMessage response = await client.PostAsJsonAsync(
                 "api/moods", newMood);
             response.EnsureSuccessStatusCode();
             return response.Headers.Location;
         }
-        public async Task<Uri> CreatePetType(string newType)
+        public async Task<Uri> CreatePetType(PetType newType)
         {
             HttpResponseMessage response = await client.PostAsJsonAsync(
                 "api/pettype", newType);
@@ -98,20 +98,22 @@ namespace Administration
             response.EnsureSuccessStatusCode();
             return response.Headers.Location;
         }
-        public async Task<DataHeader<Pet>> UpdatePetAsync(DataHeader<Pet> changedPet)
+        public async Task<Pet> UpdatePetAsync(Pet changedPet)
         {
-            HttpResponseMessage response = await client.PutAsJsonAsync($"api/pets/{changedPet.data.id}", changedPet);
+            HttpResponseMessage response = await client.PutAsJsonAsync($"api/pets/{changedPet.id}", changedPet);
             response.EnsureSuccessStatusCode();
+            response.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
             string str = response.Content.ReadAsStringAsync().Result;
-            changedPet = JsonSerializer.Deserialize<DataHeader<Pet>>(str)!;
+            changedPet = JsonSerializer.Deserialize<Pet>(str)!;
             return changedPet;
         }
-        public async Task<DataHeader<Pet>> UpdateUserAsync(DataHeader<Pet> changedUser)
+        public async Task<User> UpdateUserAsync(User changedUser)
         {
-            HttpResponseMessage response = await client.PutAsJsonAsync($"api/users/{changedUser.data.id}", changedUser);
+            HttpResponseMessage response = await client.PutAsJsonAsync($"api/users/{changedUser.id}", changedUser);
             response.EnsureSuccessStatusCode();
+            response.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
             string str = response.Content.ReadAsStringAsync().Result;
-            changedUser = JsonSerializer.Deserialize<DataHeader<Pet>>(str)!;
+            changedUser = JsonSerializer.Deserialize<User>(str)!;
             return changedUser;
         }
         public async Task<HttpStatusCode> DeleteUserAsync(string id)
@@ -132,10 +134,10 @@ namespace Administration
                 $"api/moods/{id}");
             return response.StatusCode;
         }
-        public async Task<HttpStatusCode> DeletePetTypeAsync(string id)
+        public async Task<HttpStatusCode> DeletePetTypeAsync(string typename)
         {
             HttpResponseMessage response = await client.DeleteAsync(
-                $"api/pettype/{id}");
+                $"api/pettype/{typename}");
             return response.StatusCode;
         }
     }

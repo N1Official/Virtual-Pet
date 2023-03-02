@@ -44,20 +44,24 @@
             <Label x:Name="userazonlb" Content="Felhasználó azonosító:" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cascadia Code" Grid.Column="3"/>
             <TextBox x:Name="user_idtb" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" Grid.Row="0" Grid.Column="3" Margin="0,40,0,0"/>
             <Label x:Name="typelb" Content="Típus:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code" Margin="0,10,0,0" Grid.Column="2" Grid.Row="1"/>
-            <ComboBox x:Name="typecb" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code"/>
+            <ComboBox x:Name="typecb" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" DropDownOpened="typecb_DropDownOpened"/>
             <Label x:Name="namelb" Content="Név:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0"/>
             <TextBox x:Name="nametb" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" Grid.Row="1" Grid.Column="1"/>
             <Label Content="Szomjúság szint:" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Cascadia Code" Grid.Column="1" Grid.Row="2" Margin="0,10,0,0"/>
             <Slider x:Name="thirstslider" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" Grid.Column="1" Grid.Row="2" FontFamily="Cascadia Code"/>
             <Label Content="Hangulat:" HorizontalAlignment="Center" FontFamily="Cascadia Code" VerticalAlignment="Top" Grid.Column="3" Margin="0,10,0,0" Grid.Row="3"/>
-            <ComboBox x:Name="moodcb" Grid.Column="3" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code"/>
+            <ComboBox x:Name="moodcb" Grid.Column="3" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" DropDownOpened="moodcb_DropDownOpened"/>
             <Label Content="Ügyesség:" HorizontalAlignment="Center" FontFamily="Cascadia Code" VerticalAlignment="Top" Grid.Column="2" Margin="0,10,0,0" Grid.Row="3"/>
-            <Slider x:Name="skillslider" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" Grid.Column="2" Grid.Row="3" FontFamily="Cascadia Code" Maximum="100" LargeChange="10" SmallChange="1"/>
+            <Slider x:Name="skillslider" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" Grid.Column="2" Grid.Row="3" FontFamily="Cascadia Code" Maximum="10" LargeChange="1"/>
             <Label Content="Gyorsaság:" HorizontalAlignment="Center" FontFamily="Cascadia Code" VerticalAlignment="Top" Margin="0,10,0,0" Grid.Row="2" Grid.Column="2"/>
             <Slider x:Name="speedslider" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" Grid.Column="2" Grid.Row="2" FontFamily="Cascadia Code" Maximum="100" LargeChange="10" SmallChange="1"/>
             <Grid Grid.Row="3" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="172" Margin="0,20,0,0" Grid.Column="1">
                 <Label Content="Korcsoport:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
-                <ComboBox x:Name="agegroupcb" HorizontalAlignment="Left" Margin="86,0,0,0" VerticalAlignment="Center" Width="86" FontFamily="Cascadia Code"/>
+                <ComboBox x:Name="agegroupcb" HorizontalAlignment="Left" Margin="86,0,0,0" VerticalAlignment="Center" Width="86" FontFamily="Cascadia Code">
+                    <ComboBoxItem Content="Kölyök"/>
+                    <ComboBoxItem Content="Felnőtt"/>
+                    <ComboBoxItem Content="Legendary"/>
+                </ComboBox>
             </Grid>
             <Grid Grid.Row="3" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="166" Margin="34,18,0,0" Grid.Column="1">
                 <Label Content="Kor:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code" Margin="28,0,0,0"/>

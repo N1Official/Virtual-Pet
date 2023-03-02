@@ -19,9 +19,15 @@ namespace Administration
     /// </summary>
     public partial class user_administration : Window
     {
+        static RestApiHandler restapihandler = new RestApiHandler("http://localhost:8881");
+        static User[] Users = restapihandler.GetUsers("api/users");
         public user_administration()
         {
             InitializeComponent();
+            for (int i = 0; i < Users.Length; i++)
+            {
+                idcb.Items.Add(Users[i].id);
+            }
         }
 
         private void back_Click(object sender, RoutedEventArgs e)
@@ -39,13 +45,15 @@ namespace Administration
             changedUser.firstName = firstnametb.Text;
             changedUser.lastName = lastnametb.Text;
             changedUser.gender = gendercb.Text;
-            changedUser.birthday = DateTime.Parse(birthdaydp.Text);
+            changedUser.birthday = DateTime.Parse(birthdaydp.Text).Date;
             changedUser.phone = phonetb.Text;
             changedUser.address = addresstb.Text;
             changedUser.city = addresstb.Text;
             changedUser.state = statetb.Text;
             changedUser.zipcode = int.Parse(zipcodetb.Text);
             changedUser.country = countrytb.Text;
+            restapihandler.UpdateUserAsync(changedUser);
+            MessageBox.Show("Változások elmentve!");
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)
@@ -53,7 +61,7 @@ namespace Administration
             if (MessageBox.Show("Valóban törölni akarja ezt a felhasználót?", "Törlés", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 int ind = int.Parse(idcb.Text);
-                //Users.RemoveAt(ind-1);
+                restapihandler.DeleteUserAsync(ind.ToString());
                 idcb.Items.Remove(ind);
                 pets_idtb.Text = null;
                 usernametb.Text = null;
@@ -80,24 +88,31 @@ namespace Administration
 
         private void idcb_DropDownClosed(object sender, EventArgs e)
         {
-            /*if (idcb.Text != "")
+            if (idcb.Text != "")
             {
-                int index = int.Parse(idcb.Text)-1;
-                pets_idtb.Text = Users[index].Pets_id;
-                usernametb.Text = Users[index].Username;
-                pwtb.Password = Users[index].Password;
-                emailtb.Text = Users[index].Email;
-                phonetb.Text = Users[index].Phone;
-                firstnametb.Text = Users[index].FirstName;
-                lastnametb.Text = Users[index].LastName;
-                birthdaydp.Text = Users[index].Birthday.ToString();
-                gendercb.Text = Users[index].Gender;
-                countrytb.Text = Users[index].Country;
-                statetb.Text = Users[index].State;
-                zipcodetb.Text = Users[index].Zipcode.ToString();
-                citytb.Text = Users[index].City;
-                addresstb.Text = Users[index].Address;
-            }*/
+                int index = int.Parse(idcb.Text);
+                for (int i = 0; i < Users.Length; i++)
+                {
+                    if (Users[i].id == index)
+                    {
+                        pets_idtb.Text = Users[i].pets_id;
+                        usernametb.Text = Users[i].username;
+                        pwtb.Password = Users[i].password;
+                        emailtb.Text = Users[i].email;
+                        phonetb.Text = Users[i].phone;
+                        firstnametb.Text = Users[i].firstName;
+                        lastnametb.Text = Users[i].lastName;
+                        birthdaydp.Text = Users[i].birthday.ToString();
+                        gendercb.Text = Users[i].gender;
+                        countrytb.Text = Users[i].country;
+                        statetb.Text = Users[i].state;
+                        zipcodetb.Text = Users[i].zipcode.ToString();
+                        citytb.Text = Users[i].city;
+                        addresstb.Text = Users[i].address;
+                    }
+                }
+
+            }
         }
     }
 }

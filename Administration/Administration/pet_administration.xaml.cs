@@ -22,32 +22,23 @@ namespace Administration
     public partial class pet_administration : Window
     {
         static RestApiHandler restapihandler = new RestApiHandler("http://localhost:8881");
+        static Pet[] Pets = restapihandler.GetPets("api/pets");
+        static Mood[] Moods = restapihandler.GetMoods("api/moods");
+        static PetType[] Types = restapihandler.GetPetTypes("api/pettype");
         public pet_administration()
         {
             InitializeComponent();
-            var Pets = restapihandler.GetPets("api/pets");
             for (int i = 0; i < Pets.Length; i++)
             {
-                idcb.Items.Add((i+1));
+                idcb.Items.Add(Pets[i].id);
             }
-            var Moods = restapihandler.GetMoods("api/moods");
             for (int i = 0; i < Moods.Length; i++)
             {
                 moodcb.Items.Add(Moods[i].mood);
             }
-            var Types = restapihandler.GetPetTypes("api/pettype");
             for (int i = 0; i < Types.Length; i++)
             {
                 typecb.Items.Add(Types[i].pettype);
-            }
-            for (int i = 0; i < Types.Length; i++)
-            {
-                typecb.Items.Add(Types[i].pettype);
-            }
-            string[] korcsop = new string[] { "Kölyök", "Felnőtt", "Legendary"};
-            for (int i = 0; i < korcsop.Length; i++)
-            {
-                agegroupcb.Items.Add(korcsop[i]);
             }
         }
         
@@ -55,7 +46,6 @@ namespace Administration
         {
             Close();
         }
-
         private void save_Click(object sender, RoutedEventArgs e)
         {
 
@@ -71,6 +61,8 @@ namespace Administration
             changedPet.skill = skillslider.Value;
             changedPet.age = double.Parse(agetb.Text);
             changedPet.age_group = agegroupcb.Text;
+            restapihandler.UpdatePetAsync(changedPet);
+            MessageBox.Show("Változások elmentve!");
         }
 
         private void newpet_Click(object sender, RoutedEventArgs e)
@@ -94,7 +86,7 @@ namespace Administration
             if (MessageBox.Show("Valóban törölni akarja ezt a kisállatot?", "Törlés", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 int ind = int.Parse(idcb.Text);
-                //Pets.RemoveAt(ind);
+                restapihandler.DeletePetAsync(ind.ToString());
                 idcb.Items.Remove(ind);
                 user_idtb.Text = null;
                 nametb.Text = null;
@@ -112,21 +104,45 @@ namespace Administration
 
         private void idcb_DropDownClosed(object sender, EventArgs e)
         {
-            var Pets = restapihandler.GetPets("api/pets");
+            Pets = restapihandler.GetPets("api/pets");
             if (idcb.Text != "")
             {
-                int index = int.Parse(idcb.Text)-1;
-                user_idtb.Text = Pets[index].user_id.ToString();
-                nametb.Text = Pets[index].name;
-                typecb.SelectedValue = Pets[index].type;
-                skillslider.Value = Pets[index].skill;
-                thirstslider.Value = Pets[index].thirst;
-                speedslider.Value = Pets[index].speed;
-                hungerslider.Value = Pets[index].hunger;
-                healthslider.Value = Pets[index].health;
-                agetb.Text = Pets[index].age.ToString();
-                agegroupcb.SelectedValue = Pets[index].age_group;
-                moodcb.SelectedValue = Pets[index].mood;
+                int valasztottid = int.Parse(idcb.Text);
+                for (int i = 0; i < Pets.Length; i++)
+                {
+                    if (Pets[i].id == valasztottid)
+                    {
+                        user_idtb.Text = Pets[i].user_id.ToString();
+                        nametb.Text = Pets[i].name;
+                        typecb.SelectedValue = Pets[i].type;
+                        skillslider.Value = Pets[i].skill;
+                        thirstslider.Value = Pets[i].thirst;
+                        speedslider.Value = Pets[i].speed;
+                        hungerslider.Value = Pets[i].hunger;
+                        healthslider.Value = Pets[i].health;
+                        agetb.Text = Pets[i].age.ToString();
+                        agegroupcb.SelectedValue = Pets[i].age_group;
+                        moodcb.SelectedValue = Pets[i].mood;
+                    }
+                } 
+            }
+        }
+        private void typecb_DropDownOpened(object sender, EventArgs e)
+        {
+            Types = restapihandler.GetPetTypes("api/pettype");
+            typecb.Items.Clear();
+            for (int i = 0; i < Types.Length; i++)
+            {
+                typecb.Items.Add(Types[i].pettype);
+            }
+        }
+        private void moodcb_DropDownOpened(object sender, EventArgs e)
+        {
+            Moods = restapihandler.GetMoods("api/moods");
+            moodcb.Items.Clear();
+            for (int i = 0; i < Moods.Length; i++)
+            {
+                moodcb.Items.Add(Moods[i].mood);
             }
         }
     }

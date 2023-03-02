@@ -123,7 +123,7 @@ namespace Administration
                 {
                     MessageBox.Show("Negatív nem lehet az ügyesség!");
                 }
-                else if (value > 100)
+                else if (value > 10)
                 {
                     value = 100;
                     _skill = value;

@@ -20,24 +20,14 @@ namespace Administration
     /// 
     public partial class petmood_administration : Window
     {
-        public List<string> Moods = new List<string>
-        {
-            "Good",
-            "Tired",
-            "Mad",
-            "Thankful",
-            "Touched",
-            "Lonely",
-            "loved",
-            "Stressed",
-            "Bored",
-        };
+        static RestApiHandler restapihandler = new RestApiHandler("http://localhost:8881");
+        static Mood[] Moods = restapihandler.GetMoods("api/moods");
         public petmood_administration()
         {
             InitializeComponent();
-            for (int i = 0; i < Moods.Count; i++)
+            for (int i = 0; i < Moods.Length; i++)
             {
-                moodscb.Items.Add(Moods[i]);
+                moodscb.Items.Add(Moods[i].mood);
             }
         }
 
@@ -50,28 +40,38 @@ namespace Administration
         {
             if (MessageBox.Show("Valóban törölni akarja ezt a hangulatot?", "Törlés", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                string ind = moodscb.Text;
-                for (int i = 0; i < Moods.Count; i++)
-                {
-                    if (Moods[i].ToLower() == ind.ToLower())
-                    {
-                        Moods.RemoveAt(i);
-                    }
-                }
-                moodscb.Items.Remove(ind);
+                string delmood = moodscb.Text;
+                restapihandler.DeleteMoodAsync(delmood);
+                moodscb.Items.Remove(delmood);
             }
         }
 
-        private void moodscb_DropDownClosed(object sender, EventArgs e)
-        {
-        }
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
             if (moodscb.Text == "ÚJ HANGULAT" && newmoodtb.Text!="")
             {
-                Moods.Add(newmoodtb.Text);
-                moodscb.Items.Add(newmoodtb.Text);
+                bool checker = false;
+                for (int i = 0; i < Moods.Length; i++)
+                {
+                    if (Moods[i].mood.ToLower() == newmoodtb.Text.ToLower())
+                    {
+                        checker = true;
+                        break;
+                    }
+                }
+                if (checker)
+                {
+                    MessageBox.Show("Ez a hangulat már létezik!");
+                }
+                else
+                {
+                    Mood newmood = new Mood();
+                    newmood.mood = newmoodtb.Text;
+                    restapihandler.CreateMood(newmood);
+                    moodscb.Items.Add(newmoodtb.Text);
+                    MessageBox.Show("Új hangulat hozzáadva!");
+                }
             }
         }
     }

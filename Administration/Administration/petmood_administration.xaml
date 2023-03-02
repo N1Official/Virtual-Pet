@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Center" Height="24" Margin="0,0,0,0" VerticalAlignment="Center" Width="207">
             <Label x:Name="moodslbl" Content="HANGULATOK:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
-            <ComboBox x:Name="moodscb" HorizontalAlignment="Left" Margin="87,0,0,0" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" DropDownClosed="moodscb_DropDownClosed">
+            <ComboBox x:Name="moodscb" HorizontalAlignment="Left" Margin="87,0,0,0" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code">
                 <ComboBoxItem Content="ÚJ HANGULAT" IsSelected="True"></ComboBoxItem>
             </ComboBox>
         </Grid>

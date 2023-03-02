@@ -115,17 +115,7 @@ namespace Administration
         public string phone 
         { 
             get => _phone;
-            set
-            {
-                if (value.StartsWith("+"))
-                {
-                    _phone = value;
-                }
-                else
-                {
-                    MessageBox.Show("Kérem országos hívószámmal adja meg a telefonszámot!");
-                }
-            }
+            set => _phone = value;
         }
         public string address { get => _address; set => _address = value; }
         public string city { get => _city; set => _city = value; }

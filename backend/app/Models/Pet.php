@@ -14,4 +14,5 @@ class Pet extends Model
     protected $table = 'pets';
     protected $primaryKey = 'id';
     public $timestamps = false;
+    public $incrementing = false; 
 }

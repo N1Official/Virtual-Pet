@@ -39,7 +39,7 @@ namespace Administration
         {
             User changedUser = new User();
             changedUser.id = int.Parse(idcb.Text); 
-            changedUser.pid = pets_idtb.Text;
+            changedUser.pets_id = pets_idtb.Text;
             changedUser.email = emailtb.Text;
             changedUser.password = pwtb.Password;
             changedUser.firstName = firstnametb.Text;
@@ -95,7 +95,7 @@ namespace Administration
                 {
                     if (Users[i].id == index)
                     {
-                        pets_idtb.Text = Users[i].pid;
+                        pets_idtb.Text = Users[i].pets_id;
                         usernametb.Text = Users[i].username;
                         pwtb.Password = Users[i].password;
                         emailtb.Text = Users[i].email;

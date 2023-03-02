@@ -51,7 +51,6 @@ namespace Administration
 
             Pet changedPet = new Pet();
             changedPet.id = int.Parse(idcb.Text);
-            changedPet.uid = user_idtb.Text;
             changedPet.name = nametb.Text;
             changedPet.type = typecb.Text;
             changedPet.hunger = hungerslider.Value;
@@ -113,7 +112,7 @@ namespace Administration
                 {
                     if (Pets[i].id == valasztottid)
                     {
-                        user_idtb.Text = Pets[i].uid;
+                        user_idtb.Text = Pets[i].user_id.ToString();
                         nametb.Text = Pets[i].name;
                         typecb.SelectedValue = Pets[i].type;
                         skillslider.Value = Pets[i].skill;

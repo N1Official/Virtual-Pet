@@ -36,7 +36,7 @@
             <Button Grid.Row="4" x:Name="newuser" Content="ÚJ FELHASZNÁLÓ" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Code" FontSize="20" Click="newuser_Click" Grid.Column="3"/>
             <Grid Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="135">
                 <Label x:Name="azonlb" Content="Azonosító:" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code"/>
-                <ComboBox x:Name="idcb" HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" Width="50" FontFamily="Cascadia Code" DropDownClosed="idcb_DropDownClosed"/>
+                <ComboBox x:Name="idcb" HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" Width="50" FontFamily="Cascadia Code" DropDownClosed="idcb_DropDownClosed" />
             </Grid>
             <Label x:Name="petsazonlb" Content="Kisállat azonosító(k):" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cascadia Code" Grid.Column="3"/>
             <TextBox x:Name="pets_idtb" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" FontFamily="Cascadia Code" Grid.Row="0" Grid.Column="3" Margin="0,40,0,0"/>

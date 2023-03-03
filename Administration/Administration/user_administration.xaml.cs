@@ -89,6 +89,7 @@ namespace Administration
 
         private void idcb_DropDownClosed(object sender, EventArgs e)
         {
+            Users = restapihandler.GetUsers("api/users");
             if (idcb.Text != "")
             {
                 int index = int.Parse(idcb.Text);
@@ -115,5 +116,7 @@ namespace Administration
 
             }
         }
+
+        
     }
 }

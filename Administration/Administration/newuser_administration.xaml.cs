@@ -51,13 +51,14 @@ namespace Administration
             {
                 User newUser = new User();
                 newUser.id = int.Parse(idtb.Text);
-                newUser.pets_id = pets_idtb.Text;
+                newUser.username = usernametb.Text;
+                //newUser.pets_id = pets_idtb.Text;
                 newUser.email = emailtb.Text;
                 newUser.password = pwtb.Password;
                 newUser.firstName = firstnametb.Text;
                 newUser.lastName = lastnametb.Text;
                 newUser.gender = gendercb.Text;
-                newUser.birthday = DateTime.Parse(birthdaydp.Text);
+                newUser.birthday = DateTime.Parse(birthdaydp.Text).Date;
                 newUser.phone = phonetb.Text;
                 newUser.address = addresstb.Text;
                 newUser.city = addresstb.Text;

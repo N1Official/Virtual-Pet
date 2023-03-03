@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5fimGCzUCDRsUzwJ4Dl7MtM9iRwA/w1vDm6GGMAGLwgQ8JNitR7ZnEL3w7IIr1HzS8dbcXJMhYIC85fT/uI8qQ==",
+  "dgSpecHash": "1FIQ+ZTt7N9IVOclBHnLimoYKfYbLkU2kzLy4VDmWQ1K104tV9UWbMFnGkz8MdbXy2XJltJTQeTsWZG8IpRq/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\felasznló\\Desktop\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
+  "projectFilePath": "C:\\Users\\Levi\\Desktop\\Virtual-Pet\\Administration\\Administration\\Administration.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\felasznló\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512"
+    "C:\\Users\\Levi\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

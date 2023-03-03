@@ -11,7 +11,7 @@ namespace Administration
     internal class User
     {
         private int _id;
-        private string _pets_id;
+       // private string _pets_id;
         private string _username;
         private string _email;
         private string _password;
@@ -27,7 +27,7 @@ namespace Administration
         private string _country;
 
         public int id { get => _id; set => _id = value; }
-        public string pets_id { get => _pets_id; set => _pets_id = value; }
+       // public string pets_id { get => _pets_id; set => _pets_id = value; }
         public string username { get => _username; set => _username = value; }
         public string email
         { 
